@@ -1,3 +1,6 @@
+import VicenteImage from "./vicente.png";
+import JustinImage from "./justin.png";
+
 function About() {
   return (
     <div className="about-container">
