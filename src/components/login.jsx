@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../api/axios";
 
-const LoginForm = () => {
+const LoginForm = ({ setUser }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errors, setErrors] = useState('');
+    const [errors, setErrors] = useState({});
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      const navigate = useNavigate();
   
       // Validation to check if email and password are provided
       const newErrors = {};
@@ -22,12 +22,9 @@ const LoginForm = () => {
           axiosInstance.post('/auth/login', { email, password })
               .then(response => {
                   // If login is successful, store the JWT token (here in localStorage, you can store it in HTTP-only cookies instead)
-                  localStorage.setItem('authToken', response.data.authToken); 
-  
+                  localStorage.setItem('token', response.data.authToken); 
                   // Optionally, you can set the user data in your state to update the UI
                   setUser(response.data.user); 
-  
-                  navigate("/dashboard")
               })
               .catch(error => {
                   // Handle login failure, for example, incorrect credentials

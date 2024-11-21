@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import React, { useEffect, useState } from "react"
 import axiosInstance from './api/axios';
 
@@ -18,8 +18,13 @@ function App() {
   // Fetches user data from the backend
   useEffect(() => {
     const fetchUser = async () => {
+    const token = localStorage.getItem("authToken");
+      
+    if(token){
       try {
-        const response = await axiosInstance.get("/profile");
+        const response = await axiosInstance.get("/profile", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         setUser(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -27,6 +32,9 @@ function App() {
       } finally {
         setLoading(false); // Stops loading
       }
+    } else {
+      setLoading(false);
+    }
     };
 
     fetchUser();
@@ -41,7 +49,7 @@ function App() {
      <Navbar />
 
      <Routes>
-      <Route exact path="/login" element={<LoginForm />} />
+      <Route exact path="/login" element={<LoginForm setUser={setUser} />} />
       <Route exact path="/signup" element={<SignupForm />} />
       <Route exact path="/about" element={<About />} />
       <Route path="/dashboard" element={user?.role === "owner" ?(<OwnerDashboard />) : user?.role === "sitter" ? (<SitterDashboard />) : (<Navigate to="/login" />)} />
