@@ -22,9 +22,18 @@ const LoginForm = ({ setUser }) => {
           axiosInstance.post('/auth/login', { email, password })
               .then(response => {
                   // If login is successful, store the JWT token (here in localStorage, you can store it in HTTP-only cookies instead)
-                  localStorage.setItem('token', response.data.authToken); 
+                  localStorage.setItem('authToken', response.data.authToken); 
                   // Optionally, you can set the user data in your state to update the UI
-                  setUser(response.data.user); 
+                  const role = response.data.role;
+
+                  // Redirect based on role
+                  if (role === "owner") {
+                    navigate("/dashboard/owner"); // Redirect to the owner dashboard
+                  } else if (role === "sitter") {
+                    navigate("/dashboard/sitter"); // Redirect to the sitter dashboard
+                  } else {
+                    setError("Invalid role");
+                  }
               })
               .catch(error => {
                   // Handle login failure, for example, incorrect credentials
