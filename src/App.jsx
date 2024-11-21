@@ -7,10 +7,9 @@ import axiosInstance from './api/axios';
 import Footer from './components/Footer';
 import SignupForm from './components/signup';
 import LoginForm from './components/login';
-import About from './pages/About/about';
 import OwnerDashboard from './pages/ownerDashboard/OwnerDashboard';
 import SitterDashboard from './pages/sitterDashboard/SitterDashboard';
-import About from './pages/About/About'
+import About from './pages/About/About';
 
 function App() {
   const [user, setUser] = useState(null); // Stores user data
@@ -46,7 +45,6 @@ function App() {
       <Route exact path="/signup" element={<SignupForm />} />
       <Route exact path="/about" element={<About />} />
       <Route path="/dashboard" element={user?.role === "owner" ?(<OwnerDashboard />) : user?.role === "sitter" ? (<SitterDashboard />) : (<Navigate to="/login" />)} />
-      <Route exact path="/about" element={<About />} />
      </Routes>
      <Footer />
     </>
