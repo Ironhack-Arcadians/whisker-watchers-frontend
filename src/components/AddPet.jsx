@@ -25,7 +25,7 @@ function AddPet() {
         const requestBody = { name, typeOfAnimal, breed, age, description, specialCares, pet_picture };
 
         axiosInstance
-            .post(`${API_URL}/api/pets`, requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
+            .post('/api/api/pets', requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
             .then((response) => {
                 setName("");
                 setTypeOfAnimal("");
@@ -80,7 +80,7 @@ function AddPet() {
                         type="number"
                         id="age"
                         value={age}
-                        onChange={(e) => setAge(e.target.value)}
+                        onChange={(e) => setAge(Number(e.target.value))}
                         required
                     />
                 </div>
