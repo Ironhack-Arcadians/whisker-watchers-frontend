@@ -45,7 +45,7 @@ const SignupForm = () => {
         axiosInstance.post(`${API_URL}/auth/signup`, requestBody)
             .then((response) => {
                 // Redirect to login after successful signup
-                navigate('/login');
+                navigate('/');
             })
             .catch((error) => {
                 const errorDescription = error.response?.data?.message;
