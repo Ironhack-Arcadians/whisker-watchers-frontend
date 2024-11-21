@@ -1,154 +1,117 @@
-import React, { useState } from "react";
+import { useState } from 'react';
+import axiosInstance from "../api/axios";
+import { useNavigate } from 'react-router-dom';
+
+const API_URL = "http://localhost:5005";
 
 const SignupForm = () => {
-    const [formData, setFormData] = useState({
-        email: '',
-        password: '',
-        name: '',
-        role: '',
-        phone: '',
-        profile_pic: '',
-        location: '',
-        bio: '',
-      });
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [role, setRole] = useState("");
+    const [phone, setPhone] = useState("");
+    const [profilePic, setProfilePic] = useState("");
+    const [location, setLocation] = useState("");
+    const [bio, setBio] = useState("");
+    const [errorMessage, setErrorMessage] = useState(undefined);
 
-      const [errors, setErrors] = useState({});
+    const navigate = useNavigate();
 
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-      };
-
-      // Checks if fields are filled, if not then displays an error message
-      const validateForm = () => {
-        const newErrors = {};
-        if(!formData.email) {newErrors.email = 'Email is required'};
-        if(!formData.password) {newErrors.password = 'Password is required'};
-        if(!formData.name) {newErrors.name = 'Name is required'};
-        if(!formData.role) {newErrors.role = 'Role is required'};
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-      };
-
-      const handleSubmit = (e) => {
+    // Handlers for form fields
+    const handleEmail = (e) => setEmail(e.target.value);
+    const handlePassword = (e) => setPassword(e.target.value);
+    const handleName = (e) => setName(e.target.value);
+    const handleRole = (e) => setRole(e.target.value);
+    const handlePhone = (e) => setPhone(e.target.value);
+    const handleProfilePic = (e) => setProfilePic(e.target.value);
+    const handleLocation = (e) => setLocation(e.target.value);
+    const handleBio = (e) => setBio(e.target.value);
+    
+    // Submit handler
+    const handleSignupSubmit = (e) => {
         e.preventDefault();
-        if(validateForm()) {
-            console.log('Form submitted successfully:', formData);
-            // Add in any additional form features such as toast
-        }
-      };
 
-      return (
-        <form onSubmit={handleSubmit} className="signup-form">
+        const requestBody = {
+            email,
+            password,
+            name,
+            role,
+            phone,
+            profile_pic: profilePic,
+            location,
+            bio,
+        };
+
+        axiosInstance.post(`${API_URL}/auth/signup`, requestBody)
+            .then((response) => {
+                // Redirect to login after successful signup
+                navigate('/login');
+            })
+            .catch((error) => {
+                const errorDescription = error.response?.data?.message;
+                setErrorMessage(errorDescription || "An error occurred during signup.");
+            });
+    };
+
+    return (
+        <form onSubmit={handleSignupSubmit}>
             <div>
-                <label>Email</label>
-                <input 
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required 
-                />
-                {errors.email && <span>{errors.email}</span>}
+                <label>Email:</label>
+                <input type="email" value={email} onChange={handleEmail} required />
             </div>
-
             <div>
-                <label>Password</label>
-                <input 
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                required 
-                />
-                {errors.password && <span>{errors.password}</span>}
+                <label>Password:</label>
+                <input type="password" value={password} onChange={handlePassword} required />
             </div>
-
             <div>
-                <label>Name</label>
-                <input 
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required 
-                />
-                {errors.name && <span>{errors.name}</span>}
+                <label>Name:</label>
+                <input type="text" value={name} onChange={handleName} required />
             </div>
-
             <div>
-                <label>Role</label>
+                <label>Role:</label>
                 <div>
                     <label>
-                    <input
-                    type="radio"
-                    name="role"
-                    value="owner"
-                    checked={formData.role === 'owner'}
-                    onChange={handleChange}
-                    required
-                    />
-                    Owner
+                        <input 
+                            type="radio" 
+                            value="owner" 
+                            checked={role === "owner"} 
+                            onChange={handleRole} 
+                        />
+                        Owner
                     </label>
-                    
                     <label>
-                    <input
-                    type="radio"
-                    name="role"
-                    value="sitter"
-                    checked={formData.role === 'sitter'}
-                    onChange={handleChange}
-                    required
-                    />
-                    Sitter
+                        <input 
+                            type="radio" 
+                            value="sitter" 
+                            checked={role === "sitter"} 
+                            onChange={handleRole} 
+                        />
+                        Sitter
                     </label>
                 </div>
-                {errors.role && <span>{errors.role}</span>}
+            </div>
+            <div>
+                <label>Phone:</label>
+                <input type="text" value={phone} onChange={handlePhone} />
+            </div>
+            <div>
+                <label>Profile Picture:</label>
+                <input type="text" value={profilePic} onChange={handleProfilePic} />
+            </div>
+            <div>
+                <label>Location:</label>
+                <input type="text" value={location} onChange={handleLocation} />
+            </div>
+            <div>
+                <label>Bio:</label>
+                <textarea value={bio} onChange={handleBio}></textarea>
             </div>
 
-            <div>
-                <label>Phone</label>
-                <input 
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                />
-            </div>
-
-            <div>
-                <label>Profile Picture</label>
-                <input 
-                type="url"
-                name="profile_pic"
-                value={formData.profile_pic}
-                onChange={handleChange}
-                />
-            </div>
-
-            <div>
-                <label>Location</label>
-                <input 
-                type="text"
-                name="location"
-                value={formData.location}
-                onChange={handleChange}
-                />
-            </div>
-
-            <div>
-                <label>Bio</label>
-                <input 
-                type="text"
-                name="bio"
-                value={formData.bio}
-                onChange={handleChange}
-                />
-            </div>
+            {errorMessage && <div>{errorMessage}</div>}
 
             <button type="submit">Sign Up</button>
         </form>
-      );
+    );
 };
 
-export default SignupForm
+export default SignupForm;
