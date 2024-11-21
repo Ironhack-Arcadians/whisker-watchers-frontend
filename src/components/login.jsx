@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axiosInstance from "../api/axios";
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -6,18 +8,35 @@ const LoginForm = () => {
     const [errors, setErrors] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Checks if email and password are provided, if not then displays an error message
-        const newErrors = {};
-        if(!email) {newErrors.email = "Email is required"};
-        if(!password) {newErrors.password = "Password is required"};
-        setErrors(newErrors);
-
-        if (object.keys(newErrors).length === 0) {
-            console.log({ email, password });
-        }
-    };
+      e.preventDefault();
+      const navigate = useNavigate();
+  
+      // Validation to check if email and password are provided
+      const newErrors = {};
+      if(!email) { newErrors.email = "Email is required"; }
+      if(!password) { newErrors.password = "Password is required"; }
+      setErrors(newErrors);
+  
+      if (Object.keys(newErrors).length === 0) {
+          // Proceed with the login request to the backend
+          axiosInstance.post('/auth/login', { email, password })
+              .then(response => {
+                  // If login is successful, store the JWT token (here in localStorage, you can store it in HTTP-only cookies instead)
+                  localStorage.setItem('authToken', response.data.authToken); 
+  
+                  // Optionally, you can set the user data in your state to update the UI
+                  setUser(response.data.user); 
+  
+                  navigate("/dashboard")
+              })
+              .catch(error => {
+                  // Handle login failure, for example, incorrect credentials
+                  console.error("Login failed", error.response?.data?.message || error.message);
+                  // Optionally, set errors here or show a toast/notification
+                  setErrors({ general: "Invalid credentials or error occurred." });
+              });
+      }
+  };
 
     return (
         <form onSubmit={handleSubmit} className="login-form">
