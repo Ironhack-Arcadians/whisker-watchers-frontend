@@ -11,6 +11,7 @@ import OwnerDashboard from './pages/ownerDashboard/OwnerDashboard';
 import SitterDashboard from './pages/sitterDashboard/SitterDashboard';
 import About from './pages/About/About';
 
+
 function App() {
   const [user, setUser] = useState(null); // Stores user data
   const [loading, setLoading] = useState(true); // For the loading state
