@@ -9,6 +9,7 @@ import SignupForm from './components/signup';
 import LoginForm from './components/login';
 import OwnerDashboard from './pages/ownerDashboard/OwnerDashboard';
 import SitterDashboard from './pages/sitterDashboard/SitterDashboard';
+import LandingDashboard from './pages/landingDashboard/LandingDashboard';
 import About from './pages/About/About';
 
 function App() {
@@ -52,7 +53,9 @@ function App() {
       <Route exact path="/login" element={<LoginForm setUser={setUser} />} />
       <Route exact path="/signup" element={<SignupForm />} />
       <Route exact path="/about" element={<About />} />
-      <Route path="/dashboard" element={user?.role === "owner" ?(<OwnerDashboard />) : user?.role === "sitter" ? (<SitterDashboard />) : (<Navigate to="/login" />)} />
+      <Route exact path="/landing" element={<LandingDashboard user={user} />} />
+      <Route path="/dashboard/owner" element={user?.role === "owner" ?(<OwnerDashboard />) : (<Navigate to="/login" />)} />
+      <Route path="/dashboard/sitter" element={user?.role === "sitter" ?(<SitterDashboard />) : (<Navigate to="/login" />)} />
      </Routes>
      <Footer />
     </>
