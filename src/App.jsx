@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react"
 import axiosInstance from './api/axios';
 
 import Footer from './components/Footer';
-import SignupForm from './components/signup';
+import SignupForm from './components/Signup';
 import LoginForm from './components/login';
 import OwnerDashboard from './pages/ownerDashboard/OwnerDashboard';
 import SitterDashboard from './pages/sitterDashboard/SitterDashboard';
