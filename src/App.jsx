@@ -1,8 +1,8 @@
 import './App.css';
 import Navbar from './components/navbar/Navbar';
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import React, { useEffect, useState } from "react"
-import axiosInstance from './api/axios';
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react"
+import { AuthContext } from './context/auth.context';
 
 import Footer from './components/footer/Footer';
 import SignupForm from './components/signup/signup';
@@ -14,63 +14,41 @@ import About from './pages/About/About';
 import HomePage from './pages/HomePage';
 import Sidebar from './components/sidebar/sidebar';
 
+import IsAnon from './components/isAnon';
+import IsPrivate from './components/isPrivate';
+
 
 function App() {
+  const { user, isLoading, logOutUser } = useContext(AuthContext);
   const location = useLocation();
-  const [user, setUser] = useState(null); // Stores user data
-  const [loading, setLoading] = useState(true); // For the loading state
+  const navigate = useNavigate();
 
-  // Fetches user data from the backend
-  useEffect(() => {
-    const fetchUser = async () => {
-    const token = localStorage.getItem("authToken");
-      
-    if(token){
-      try {
-        const response = await axiosInstance.get("/auth/verify", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setUser(response.data);
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-        setUser(null); // Resets user if the request fails
-      } finally {
-        setLoading(false); // Stops loading
-      }
-    } else {
-      setLoading(false);
-    }
-    };
+  const showSidebar = user && location.pathname.includes('/dashboard/');
 
-    fetchUser();
-  }, []);
-
-  if(loading) {
-    return <div>Loading...</div>; // Can implement loading bar here or some css
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
-
-  const showSidebar = location.pathname.includes('/dashboard/');
 
   return (
     <>
-     <Navbar />
-     <div className="app-layout">
+      <Navbar user={user} />
+      <div className="app-layout">
         <div className="main-content">
-          {showSidebar && <Sidebar />}
+          {showSidebar && <Sidebar handleLogout={logOutUser} />}
           <div className="content">
             <Routes>
               <Route exact path="/" element={<HomePage />} />
-              <Route exact path="/login" element={<LoginForm setUser={setUser} />} />
+              <Route exact path="/login" element={<LoginForm />} />
               <Route exact path="/signup" element={<SignupForm />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/landing" element={<LandingDashboard user={user} />} />
-              <Route path="/dashboard/owner" element={<OwnerDashboard />} />
-              <Route path="/dashboard/sitter" element={<SitterDashboard />} />
-     </Routes>
+              <Route path="/dashboard/owner" element={<IsPrivate requiredRole={"owner"}> <OwnerDashboard /> </IsPrivate>} />
+              <Route path="/dashboard/sitter" element={<IsPrivate requiredRole={"sitter"}> <SitterDashboard /> </IsPrivate>} />
+            </Routes>
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
-     <Footer />
+      <Footer />
     </>
   )
 }

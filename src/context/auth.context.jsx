@@ -31,21 +31,21 @@ function AuthProviderWrapper(props) {
                     const user = response.data;
                     // Update state variables        
                     setIsLoggedIn(true);
-                    setIsLoading(false);
                     setUser(user);
                 })
                 .catch((error) => {
                     // If the server sends an error response (invalid token) 
                     // Update state variables         
                     setIsLoggedIn(false);
-                    setIsLoading(false);
                     setUser(null);
+                })
+                .finally(() => {
+                    setIsLoading(false);
                 });
         } else {
             // If the token is not available (or is removed)
-            setIsLoggedIn(false);
             setIsLoading(false);
-            setUser(null);
+            
         }
     }
 
@@ -56,6 +56,7 @@ function AuthProviderWrapper(props) {
     const logOutUser = () => {
         removeToken();
         authenticateUser();
+        setUser(null);
     }
 
 
@@ -70,8 +71,10 @@ function AuthProviderWrapper(props) {
                 isLoggedIn,
                 isLoading,
                 user,
+                setUser,
                 storeToken,
-                authenticateUser
+                authenticateUser,
+                logOutUser,
             }}
         >
             {props.children}

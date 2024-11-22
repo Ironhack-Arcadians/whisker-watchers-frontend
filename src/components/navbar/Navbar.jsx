@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({setUser}) {
   return (
     <nav className="navbar">
       <div className="navbar-container">
