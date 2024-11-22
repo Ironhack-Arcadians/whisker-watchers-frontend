@@ -12,13 +12,13 @@ function AddPet() {
     const [specialCares, setSpecialCares] = useState("");
     const [pet_picture, setPet_picture] = useState("");
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const storedToken = localStorage.getItem("token"); // Fetch the token from localStorage
+        const storedToken = localStorage.getItem("authToken"); // Fetch the token from localStorage
         if (!storedToken) {
             console.log("No token found");
+            alert("You must be logged in to add a pet."); // -> for debugging
             return; // Handle case where token is missing
         }
 
@@ -27,16 +27,18 @@ function AddPet() {
         axiosInstance
             .post('/api/api/pets', requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
             .then((response) => {
+                // Clear form fields after successful submission
                 setName("");
                 setTypeOfAnimal("");
                 setBreed("");
                 setAge("");
                 setDescription("");
                 setSpecialCares("");
-                setPet_picture("")
+                setPet_picture("");
             })
-            .catch((error) => console.log(error))
+            .catch((error) => console.log(error));
     };
+
     return (
         <div>
             <h2>Add New Pet</h2>

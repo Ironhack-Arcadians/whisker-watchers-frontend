@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../api/axios";
+import { AuthContext } from "../../context/auth.context";
 
 const LoginForm = ({ setUser }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
+
+    const { storeToken } = useContext(AuthContext);
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -21,8 +24,11 @@ const LoginForm = ({ setUser }) => {
           // Proceed with the login request to the backend
           axiosInstance.post('/auth/login', { email, password })
               .then(response => {
+                  const token = response.data.authToken;
+                  
                   // If login is successful, store the JWT token (here in localStorage, you can store it in HTTP-only cookies instead)
-                  localStorage.setItem('authToken', response.data.authToken); 
+                  storeToken(token);
+                  console.log("Token stored:", token);
                   // Optionally, you can set the user data in your state to update the UI
                   const role = response.data.role;
 

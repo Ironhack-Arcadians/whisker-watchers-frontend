@@ -21,7 +21,7 @@ function App() {
   // Fetches user data from the backend
   useEffect(() => {
     const fetchUser = async () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("authToken");
       
     if(token){
       try {
