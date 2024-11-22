@@ -25,7 +25,7 @@ function AddPet() {
         const requestBody = { name, typeOfAnimal, breed, age, description, specialCares, pet_picture };
 
         axiosInstance
-            .post('/api/api/pets', requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
+            .post('/api/pets', requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
             .then((response) => {
                 // Clear form fields after successful submission
                 setName("");
