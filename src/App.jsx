@@ -11,7 +11,7 @@ import OwnerDashboard from './pages/ownerDashboard/OwnerDashboard';
 import SitterDashboard from './pages/sitterDashboard/SitterDashboard';
 import LandingDashboard from './pages/landingPage/LandingPage';
 import About from './pages/About/About';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/homepage/HomePage';
 import Sidebar from './components/sidebar/sidebar';
 
 
@@ -75,4 +75,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
