@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axiosInstance from "../api/axios";
 
 const API_URL = "http://localhost:5005";
@@ -6,12 +6,28 @@ const API_URL = "http://localhost:5005";
 function AddPet() {
     const [name, setName] = useState("");
     const [typeOfAnimal, setTypeOfAnimal] = useState("");
+    const [animalTypes, setAnimalTypes] = useState([]); // Holds the animal types (e.g., "Dog", "Cat")
     const [breed, setBreed] = useState("");
     const [age, setAge] = useState("");
     const [description, setDescription] = useState("");
     const [specialCares, setSpecialCares] = useState("");
     const [pet_picture, setPet_picture] = useState("");
+    const [loading, setLoading] = useState(true); // For handling loading state
 
+    useEffect(() => {
+        // Fetch available animal types dynamically
+        axiosInstance
+            .get("/api/animal-types") 
+            .then((response) => {
+                setAnimalTypes(response.data.data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.log("Error fetching animal types:", error);
+                setLoading(false);
+            });
+    }, []);
+    
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -56,13 +72,19 @@ function AddPet() {
 
                 <div>
                     <label htmlFor="typeOfAnimal">Type of Animal:</label>
-                    <input
-                        type="text"
+                    <select
                         id="typeOfAnimal"
                         value={typeOfAnimal}
                         onChange={(e) => setTypeOfAnimal(e.target.value)}
                         required
-                    />
+                    >
+                        <option value="">Select Animal Type</option>
+                        {animalTypes.map((type, index) => (
+                            <option key={index} value={type}>
+                                {type}
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 <div>
