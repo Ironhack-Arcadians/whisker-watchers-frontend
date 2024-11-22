@@ -1,26 +1,22 @@
-import {Link} from "react-router-dom"
-import { useContext } from "react";
-// Auth ->
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
-    // -> isLoggedIn?
-
-
-    //We have to add here, conditional rendering for logged users/ type of user
-    //with a logout button
-    //and not logged in users
-
-return (
-    <nav>
-        <Link to="/">
-            <button>Home</button>
+  return (
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-link">
+          <button className="navbar-button">Home</button>
         </Link>
-        <>
-          <Link to="/signup"> <button>Sign Up</button> </Link>
-          <Link to="/login"> <button>Login</button> </Link>
-        </>
+        <Link to="/signup" className="navbar-link">
+          <button className="navbar-button">Sign Up</button>
+        </Link>
+        <Link to="/login" className="navbar-link">
+          <button className="navbar-button">Login</button>
+        </Link>
+      </div>
     </nav>
-)
+  );
 }
 
 export default Navbar;

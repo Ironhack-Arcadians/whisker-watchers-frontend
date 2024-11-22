@@ -1,0 +1,48 @@
+.navbar {
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 60px; /* Altura del navbar */
+    background-color: #374151; /* Color de fondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para diseño */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  /* Contenedor de enlaces */
+  .navbar-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; /* Espacio para distribuir los botones */
+    max-width: 1200px; /* Máximo ancho del contenedor */
+    padding: 0 20px;
+  }
+  
+  /* Estilo de los enlaces */
+  .navbar-link {
+    text-decoration: none; /* Sin subrayado */
+  }
+  
+  /* Botones dentro del Navbar */
+  .navbar-button {
+    background-color: #2563eb; /* Azul para los botones */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-button:hover {
+    background-color: #1d4ed8; /* Azul más oscuro al pasar el cursor */
+  }
+  
+  /* Evita que otros elementos se vean afectados por el Navbar */
+  .app-layout {
+    margin-top: 60px; /* Compensa la altura del navbar */
+  }
