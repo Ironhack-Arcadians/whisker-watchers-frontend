@@ -1,0 +1,42 @@
+.sidebar {
+    position: fixed; /* Fija la barra lateral en la pantalla */
+    top: 0;
+    left: 0;
+    width: 200px; /* Ancho de la barra */
+    height: 100vh; /* Altura completa del viewport */
+    background-color: #f4f4f4; /* Color de fondo claro */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    justify-content: space-between; /* Distribuye los elementos entre el espacio */
+}
+
+.sidebar h1 {
+    margin-bottom: 20px; /* Espaciado debajo del título */
+}
+
+.sidebar .top-buttons {
+    display: flex;
+    flex-direction: column; /* Alineación vertical para botones superiores */
+    gap: 10px; /* Espaciado entre botones superiores */
+}
+
+.sidebar .bottom-button {
+    margin-top: auto; /* Empuja el último botón hacia abajo */
+    margin-bottom: 20%;
+}
+
+.sidebar button {
+    width: 100%; /* Botones con ancho completo */
+    padding: 10px;
+    border: none;
+    background-color: #007bff; /* Color primario */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
