@@ -68,29 +68,6 @@ const SignupForm = () => {
                 <input type="text" value={name} onChange={handleName} required />
             </div>
             <div>
-                <label>Role:</label>
-                <div>
-                    <label>
-                        <input 
-                            type="radio" 
-                            value="owner" 
-                            checked={role === "owner"} 
-                            onChange={handleRole} 
-                        />
-                        Owner
-                    </label>
-                    <label>
-                        <input 
-                            type="radio" 
-                            value="sitter" 
-                            checked={role === "sitter"} 
-                            onChange={handleRole} 
-                        />
-                        Sitter
-                    </label>
-                </div>
-            </div>
-            <div>
                 <label>Phone:</label>
                 <input type="text" value={phone} onChange={handlePhone} />
             </div>
