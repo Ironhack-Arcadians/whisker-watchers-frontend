@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axiosInstance from "../api/axios";
 
-function AddCareRequest() {
+function AddCareRequest({ selectedSitter }) {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [pet, setPet] = useState(""); // This should be the pet ID
@@ -24,8 +24,8 @@ function AddCareRequest() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!startDate || !endDate || !pet) {
-      setError("All fields are required.");
+    if (!startDate || !endDate || !pet || !selectedSitter) {
+      setError("All fields, including sitter selection, are required.");
       return;
     }
 
@@ -41,7 +41,7 @@ function AddCareRequest() {
       return;
     }
 
-    const requestBody = { startDate, endDate, pet, comment };
+    const requestBody = { startDate, endDate, pet, comment, selectedSitter };
 
     axiosInstance
       .post("/api/care-requests", requestBody, {
@@ -59,23 +59,11 @@ function AddCareRequest() {
       .catch((error) => console.log("Error adding care request:", error));
   };
 
-  // Provides a real-time notification to user if they choose an invalid end date
-  const handleEndDateChange = (e) => {
-    const selectedEndDate = e.target.value;
-
-    if (new Date(selectedEndDate) <= new Date(startDate)) {
-      setError("End date and time must be after the start date and time.");
-    } else {
-      setError("");
-    }
-
-    setEndDate(selectedEndDate);
-  };
   return (
-    <div>
+    <div className="add-care-request">
       <h2>Add New Care Request</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="care-request-form">
+        <div className="form-group">
           <label htmlFor="startDate">Start Date:</label>
           <input
             type="datetime-local"
@@ -87,21 +75,19 @@ function AddCareRequest() {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="endDate">End Date:</label>
           <input
             type="datetime-local"
             id="endDate"
             value={endDate}
-            onChange={handleEndDateChange}
-            min={startDate} // Prevents selecting a time before the starting date
+            onChange={(e) => setEndDate(e.target.value)}
+            min={startDate}
             required
           />
         </div>
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
-
-        <div>
+        <div className="form-group">
           <label htmlFor="pet">Pet:</label>
           <select
             id="pet"
@@ -118,21 +104,22 @@ function AddCareRequest() {
           </select>
         </div>
 
-        <div>
+        <div className="form-group">
           <label htmlFor="comment">Comment:</label>
           <input
             type="text"
             id="comment"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
-            required
           />
         </div>
 
-        <button type="submit">Add Care Request</button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+
+        <button type="submit" className="submit-btn">Add Care Request</button>
       </form>
     </div>
   );
 }
 
-export default AddCareRequest;
+export default AddCareRequest
