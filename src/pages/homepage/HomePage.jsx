@@ -1,63 +1,139 @@
 import React from "react";
+import ReactDOM from 'react-dom'
+import "./homepage.scss";
+import "./homepage.css";
+import Sammo from '../../assets/images/Sammo.jpg';
+import doggos from "../../assets/images/doggos.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+
+
+/* Bootstrap css */
+import "../../css/bootstrap-css/bootstrap-reboot.css";
+import "../../css/bootstrap-css/style.css";
+<link rel="stylesheet" href="css/flaticon.css"></link>
+
+/* Personalised styling */
 
 function HomePage() {
   return (
     <div className="homepage-container">
-      <h1>Welcome to Whisker Watchers</h1>
-      <p>
-        Your trusted platform for pet care, connecting pet owners with reliable
-        pet sitters.
-      </p>
-
-      <div className="how-it-works">
-        <h2>How Whisker Watchers Works</h2>
-
-        <div className="steps-container">
-          {/* Step 1 */}
-          <div className="step">
-            <h3>Step 1: Register and Create Your Profile</h3>
-            <p>
-              <strong>For Pet Owners:</strong> Register your account and choose
-              the "Pet Owner" profile type. Fill in your personal details.
-            </p>
-            <p>
-              <strong>For Pet Sitters:</strong> Register your account and select
-              the "Pet Sitter" profile type. Complete your details and set up
-              your sitter profile.
-            </p>
-          </div>
-
-          {/* Step 2 */}
-          <div className="step">
-            <h3>Step 2: Set Up Your Profile</h3>
-            <p>
-              <strong>For Pet Owners:</strong> After creating your account, add
-              profiles for your pets, including their name, age, breed, and any
-              special care needs.
-            </p>
-            <p>
-              <strong>For Pet Sitters:</strong> Once your sitter profile is set
-              up, visit your dashboard to browse through available pet care
-              requests that match your availability and preferences.
-            </p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="step">
-            <h3>Step 3: Create and Respond to Care Requests</h3>
-            <p>
-              <strong>For Pet Owners:</strong> Create care requests for your
-              pets and choose from sitters who respond to your requests. Pick
-              the one that suits your pet’s needs best.
-            </p>
-            <p>
-              <strong>For Pet Sitters:</strong> Browse the care requests posted
-              by pet owners and respond to those that align with your skills,
-              location, and availability.
-            </p>
+      <section className="intro-title">
+        <div className="container-intro">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="heading-section mb-5 mt-5 mt-lg-0">
+                <h1 className="mb-3 wwheader">Welcome to Whisker Watchers</h1>
+                <p className="intro-text">
+                  Your trusted platform for pet care, connecting pet owners with
+                  reliable pet sitters.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="ftco-section timeline-container">
+        <div className="container">
+          <h2 className="mb-4">How Whisker Watchers Works</h2>
+          <div id="timeline">
+            {/* Step 1 */}
+            <div className="timeline-item">
+              <div className="timeline-icon">
+              {/* Can input icon here */}
+              </div>
+              <div className="timeline-content">
+                <h2>Step 1: Register and Create Your Profile</h2>
+                <p className="text">
+                  <strong>For Pet Owners:</strong> Register your account and choose the "Pet Owner" profile type. Fill in your personal details.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="timeline-item">
+              <div className="timeline-icon">
+                {/* Can input icon here */}
+              </div>
+              <div className="timeline-content right">
+                <h2>Step 2: Set Up Your Profile</h2>
+                <p className="text">
+                  <strong>For Pet Owners:</strong> After creating your account, add profiles for your pets, including their name, age, breed, and any special care needs.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="timeline-item">
+              <div className="timeline-icon">
+                {/* Can input icon here */}
+              </div>
+              <div className="timeline-content">
+                <h2>Step 3: Create and Respond to Care Requests</h2>
+                <p className="text">
+                  <strong>For Pet Owners:</strong> Create care requests for your pets and choose from sitters who respond to your requests. Pick the one that suits your pet’s needs best.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="ftco-section ftco-no-pt ftco-no-pb">
+        <div className="container">
+          <div className="row d-flex no-gutters">
+            <div className="col-md-5 d-flex">
+              <div className="img-video">
+                <img
+                  src={Sammo}
+                  alt="Why Choose Us"
+                  className="img-fluid"
+                />
+              </div>
+            </div>
+            <div className="col-md-7 pl-md-5 py-md-5">
+              <div className="heading-section pt-md-5">
+                <h2 className="mb-4">Why Choose Us?</h2>
+              </div>
+              <div className="row">
+                {[
+                  {
+                    icon: <FontAwesomeIcon icon={faHeart} />,
+                    title: "Pet Care Advice",
+                    text: "Far far away...",
+                  },
+                  {
+                    icon: "flaticon-customer-service",
+                    title: "Subscription Benefits",
+                    text: "Far far away...",
+                  },
+                  {
+                    icon: "flaticon-emergency-call",
+                    title: "Ease of Use",
+                    text: "Far far away...",
+                  },
+                  {
+                    icon: "flaticon-veterinarian",
+                    title: "Pet Sitting Services",
+                    text: "Far far away...",
+                  },
+                ].map((service, index) => (
+                  <div key={index} className="col-md-6 services-2 w-100 d-flex">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className={service.icon}></span>
+                    </div>
+                    <div className="text pl-3">
+                      <h4>{service.title}</h4>
+                      <p>{service.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
