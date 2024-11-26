@@ -8,7 +8,6 @@ const SignupForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-    const [role, setRole] = useState("");
     const [phone, setPhone] = useState("");
     const [profilePic, setProfilePic] = useState("");
     const [location, setLocation] = useState("");
@@ -21,7 +20,6 @@ const SignupForm = () => {
     const handleEmail = (e) => setEmail(e.target.value);
     const handlePassword = (e) => setPassword(e.target.value);
     const handleName = (e) => setName(e.target.value);
-    const handleRole = (e) => setRole(e.target.value);
     const handlePhone = (e) => setPhone(e.target.value);
     const handleProfilePic = (e) => setProfilePic(e.target.value);
     const handleLocation = (e) => setLocation(e.target.value);
@@ -35,7 +33,6 @@ const SignupForm = () => {
             email,
             password,
             name,
-            role,
             phone,
             profile_pic: profilePic,
             location,
