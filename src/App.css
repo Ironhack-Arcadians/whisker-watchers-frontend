@@ -11,24 +11,7 @@
   margin: 0;
 }
 
-.main-content {
-    margin-left: 200px; /* Matches the sidebar width */
-    padding: 20px; /* Optional for spacing */
-    min-height: 100vh;
-    background-color: #f8f9fa;
-}
 
-.content-wrapper {
-  display: flex;
-  flex: 1;
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align to the top */
-  flex-direction: column;
-}
 
 /* OWNER DASHBOARD */
 
