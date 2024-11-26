@@ -4,8 +4,13 @@ import "./homepage.scss";
 import "./homepage.css";
 import Sammo from "../../assets/images/Sammo.jpg";
 import doggos from "../../assets/images/doggos.jpg";
+
+/* Font awesome icon imports */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHandshake } from '@fortawesome/free-regular-svg-icons';
 
 /* Bootstrap css */
 import "../../css/bootstrap-css/bootstrap-reboot.css";
@@ -117,24 +122,24 @@ function HomePage() {
                     text: "Offering expert pet care tips to ensure your pet’s well-being.",
                   },
                   {
-                    icon: "flaticon-customer-service",
+                    icon: <FontAwesomeIcon icon={faUser} />,
                     title: "Subscription Benefits",
                     text: "Enjoy exclusive perks for members.",
                   },
                   {
-                    icon: "flaticon-emergency-call",
+                    icon: <FontAwesomeIcon icon={faHandshake} />,
                     title: "Ease of Use",
                     text: "Simple platform to connect with trusted pet sitters.",
                   },
                   {
-                    icon: "flaticon-veterinarian",
+                    icon: <FontAwesomeIcon icon={faPaw} />,
                     title: "Pet Sitting Services",
                     text: "Professional sitters who understand your pet’s needs.",
                   },
                 ].map((service, index) => (
                   <div key={index} className="col-md-6 services-2 w-100 d-flex">
                     <div className="icon d-flex align-items-center justify-content-center">
-                      <span className={service.icon}></span>
+                    {service.icon}
                     </div>
                     <div className="text pl-3">
                       <h4>{service.title}</h4>
