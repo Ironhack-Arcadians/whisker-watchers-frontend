@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column; /*keeps navbar at top*/
   height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .main-content {
@@ -16,7 +18,6 @@
 
 .content {
   flex: 1; 
-  padding: 20px;
   overflow-y: auto;
 }
 
