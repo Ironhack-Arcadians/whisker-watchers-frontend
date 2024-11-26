@@ -1,89 +1,93 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import axiosInstance from "../../api/axios";
 import './SitterDashboard.css';
 
-
 function SitterDashboard() {
+  const [careRequests, setCareRequests] = useState([]);
+  const [error, setError] = useState("");
+  const navigate = useNavigate(); // Initialize navigate hook
 
-    const [careRequests, setCareRequests] = useState([]);
-    const [error, setError] = useState("");
+  useEffect(() => {
+    const fetchCareRequests = async () => {
+      const storedToken = localStorage.getItem("authToken");
 
-    useEffect(() => {
-        const fetchCareRequests = async () => {
-            const storedToken = localStorage.getItem("authToken");
+      if (!storedToken) {
+        setError("You must be logged in to view care requests.");
+        return;
+      }
 
-            if (!storedToken) {
-                setError("You must be logged in to view care requests.");
-                return;
-            }
+      try {
+        const response = await axiosInstance.get("/api/care-requests", {
+          headers: {
+            Authorization: `Bearer ${storedToken}`,
+          },
+        });
+        setCareRequests(response.data.data);
+      } catch (err) {
+        console.error("Error fetching care requests:", err);
+        setError("Failed to fetch care requests. Please try again later.");
+      }
+    };
 
-            try {
-                const response = await axiosInstance.get("/api/care-requests", {
-                    headers: {
-                        Authorization: `Bearer ${storedToken}`,
-                    },
-                });
-                setCareRequests(response.data.data);
-            } catch (err) {
-                console.error("Error fetching care requests:", err);
-                setError("Failed to fetch care requests. Please try again later.");
-            }
-        };
+    fetchCareRequests();
+  }, []);
 
-        fetchCareRequests();
-    }, []);
-    return (
-        <div className="dashboard-container">
-            <nav className="navbar">Sitter Dashboard </nav>
-            <div className="content-wrapper">
-                <main className="main-content">
-                    <h2>Care Requests Dashboard</h2>
-                    {error && <p style={{ color: "red" }}>{error}</p>}
-                    <div className="care-requests-container">
-                        {careRequests.length > 0 ? (
-                            careRequests.map((request) => (
-                                <div key={request._id} className="care-request-card">
-                                    {/* Pet Name and Type */}
-                                    <h2>
-                                        {request.comment}
-                                    </h2>
+  // Function to handle "See Details" button click
+  const handleSeeDetails = (requestId) => {
+    navigate(`/care-requests/sitter/${requestId}`); // Navigate to the details page for the selected care request
+  };
 
-                                    {/* Pet Picture */}
-                                    <img
-                                        src={request.pet.pet_picture || "default-image.jpg"} // Replace with a placeholder if no image is available
-                                        alt={request.pet.name}
-                                        style={{
-                                            width: "100%",
-                                            height: "200px",
-                                            objectFit: "cover",
-                                            borderRadius: "8px",
-                                            marginBottom: "10px",
-                                        }}
-                                    />
+  return (
+    <div className="dashboard-container">
+      <nav className="navbar">Sitter Dashboard </nav>
+      <div className="content-wrapper">
+        <main className="main-content">
+          <h2>Care Requests Dashboard</h2>
+          {error && <p style={{ color: "red" }}>{error}</p>}
+          <div className="care-requests-container">
+            {careRequests.length > 0 ? (
+              careRequests.map((request) => (
+                <div key={request._id} className="care-request-card">
+                  {/* Pet Name and Type */}
+                  <h2>{request.comment}</h2>
 
-                                    {/* Request Details */}
+                  {/* Pet Picture */}
+                  <img
+                    src={request.pet.pet_picture || "default-image.jpg"}
+                    alt={request.pet.name}
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      objectFit: "cover",
+                      borderRadius: "8px",
+                      marginBottom: "10px",
+                    }}
+                  />
 
-                                    <p>
-                                        <strong>{request.pet.owner.name} </strong> in <strong> {request.pet.owner.location} </strong>
-                                    </p>
-                                    <p>
-                                        <strong>Status:</strong> {request.status}
-                                    </p>
+                  {/* Request Details */}
+                  <p>
+                    <strong>{request.pet.owner.name}</strong> in{" "}
+                    <strong>{request.pet.owner.location}</strong>
+                  </p>
+                  <p>
+                    <strong>Status:</strong> {request.status}
+                  </p>
 
-                                    {/* Apply Button */}
-                                    <button onClick={() => handleApply(request._id)}>
-                                        See Details
-                                    </button>
-                                </div>
-                            ))
-                        ) : (
-                            <p>No care requests found.</p>
-                        )}
-                    </div>
-                </main>
-            </div>
-        </div>
-    );
+                  {/* Apply Button */}
+                  <button onClick={() => handleSeeDetails(request._id)}>
+                    See Details
+                  </button>
+                </div>
+              ))
+            ) : (
+              <p>No care requests found.</p>
+            )}
+          </div>
+        </main>
+      </div>
+    </div>
+  );
 }
 
-export default SitterDashboard
+export default SitterDashboard;
