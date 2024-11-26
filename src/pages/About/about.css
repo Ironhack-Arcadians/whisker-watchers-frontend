@@ -97,7 +97,7 @@ body {
     padding: 20px;
     border-radius: 50%;
     font-size: 24px;
-    color: #007bff;
+    color: #2ba546;
   }
   
   .services-2 .text h4 {
@@ -151,7 +151,7 @@ body {
   
   .services-2 .icon {
     font-size: 3rem;
-    color: #007bff;
+    color:#2ba546 ;
   }
   
   .services-2 .text h4 {
@@ -179,12 +179,20 @@ body {
     height: auto; 
     display: block; 
     margin: 0 auto; 
+    border-radius: 50%;
   }
   
   .img-video {
     position: relative; 
   }
 
+  .faq-section {
+    background-color: #ffff;
+  }
+
+  .about-us {
+    background-color: #F8F9FD;
+  }
   /* Responsive Styles */
   @media (max-width: 768px) {
     .testimony-wrap {
