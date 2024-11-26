@@ -20,7 +20,7 @@ function Sidebar({ handleLogout }) {
 
     return (
         <div className="sidebar">
-            <h1>Sidebar</h1>
+            
             <div className="top-buttons">
                 <button>My Pets</button>
                 {/* Conditionally render buttons based on user role */}

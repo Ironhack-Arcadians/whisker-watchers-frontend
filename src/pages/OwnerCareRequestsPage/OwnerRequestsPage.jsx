@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../api/axios";
-
+import "./OwnerRequestsPage.css"
+import { Link } from "react-router-dom";
 const OwnerRequestsPage = () => {
-  
+
   const [careRequests, setCareRequests] = useState([]);
   const [error, setError] = useState("");
+
 
   useEffect(() => {
     const fetchCareRequests = async () => {
@@ -34,7 +36,6 @@ const OwnerRequestsPage = () => {
 
   return (
     <div className="my-care-requests-page">
-      <h2>My Care Requests</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <div className="care-requests-container">
         {careRequests.length > 0 ? (
@@ -62,6 +63,9 @@ const OwnerRequestsPage = () => {
                 Date: <strong>{new Date(request.startDate).toLocaleDateString()}</strong> -{" "}
                 <strong>{new Date(request.endDate).toLocaleDateString()}</strong>
               </p>
+              <Link to={`/care-requests/${request._id}`}>
+                <button>More Details</button>
+              </Link>
             </div>
           ))
         ) : (
