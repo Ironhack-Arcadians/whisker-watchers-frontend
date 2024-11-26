@@ -14,6 +14,7 @@ import About from './pages/About/About';
 import HomePage from './pages/homepage/HomePage';
 import Sidebar from './components/sidebar/Sidebar';
 import OwnerRequestsPage from './pages/OwnerCareRequestsPage/OwnerRequestsPage';
+import CareRequestDetailsPage from './pages/CareRequestDetailsPage/CareRequestDetailsPage';
 
 import IsAnon from './components/isAnon';
 import IsPrivate from './components/isPrivate';
@@ -23,8 +24,8 @@ function App() {
   const { user, isLoading, logOutUser } = useContext(AuthContext);
   const location = useLocation();
 
- 
-  const shouldShowSidebar = location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname!=='/'
+
+  const shouldShowSidebar = location.pathname !== '/login' && location.pathname !== '/signup' && location.pathname !== '/'
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -34,7 +35,7 @@ function App() {
     <>
       <Navbar user={user} />
       <div className="app-layout">
-          {shouldShowSidebar  && <Sidebar handleLogout={logOutUser} />}
+        {shouldShowSidebar && <Sidebar handleLogout={logOutUser} />}
         <div className="main-content">
           <div className="content">
             <Routes>
@@ -46,6 +47,7 @@ function App() {
               <Route path="/dashboard/owner" element={<IsPrivate requiredRole={"owner"}> <OwnerDashboard /> </IsPrivate>} />
               <Route path="/dashboard/sitter" element={<IsPrivate requiredRole={"sitter"}> <SitterDashboard /> </IsPrivate>} />
               <Route path="/my-care-requests" element={<IsPrivate requiredRole={"owner"}> <OwnerRequestsPage /> </IsPrivate>} />
+              <Route path="/care-requests/:id" element={<IsPrivate requiredRole={"owner"}><CareRequestDetailsPage /></IsPrivate>} />
             </Routes>
           </div>
         </div>
