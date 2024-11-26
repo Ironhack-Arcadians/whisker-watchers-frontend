@@ -10,9 +10,9 @@ const Footer = () => {
           <p>&copy; 2024 Whisker Watchers. All rights reserved.</p>
         </div>
         <div className="footer-center">
-          <nav>
+          <nav className="footer-nav">
             <ul>
-            <Link to="/about"> <button>About us</button> </Link>
+            <Link to="/about"> <button className="abt-btn">About us</button> </Link>
             </ul>
           </nav>
         </div>
