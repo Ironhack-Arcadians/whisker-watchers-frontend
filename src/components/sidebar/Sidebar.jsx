@@ -44,11 +44,8 @@ function Sidebar({ handleLogout }) {
                 <Link to={`/profile/${user}`}>
                     <button>Profile</button>
                 </Link>
-            </div>
-            <div className="bottom-button">
                 <button onClick={handleLogoutAndRedirect}>Logout</button>
             </div>
-
             {/* Modal to display the AddPet form */}
             {showPetModal && (
                 <div className="modal-overlay">
