@@ -100,8 +100,8 @@ function App() {
 
       {/* Signup Modal */}
       {isSignupModalOpen && (
-        <div className="signup-modal-overlay">
-          <div className="signup-modal">
+        <div className="modal-overlay">
+          <div className="modal-content">
             <button className="close-button" onClick={toggleSignupModal}>
               &times;
             </button>
@@ -111,8 +111,8 @@ function App() {
       )}
 
       {isLoginModelOpen && (
-        <div className="signup-modal-overlay">
-          <div className="signup-modal">
+        <div className="modal-overlay">
+          <div className="modal-content">
             <button className="close-button" onClick={toggleLoginModel}>
               &times;
             </button>
