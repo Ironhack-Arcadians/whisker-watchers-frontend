@@ -53,7 +53,7 @@ const SignupForm = ({ onClose }) => {
   };
 
   return (
-    <form onSubmit={handleSignupSubmit}>
+    <form onSubmit={handleSignupSubmit} className="signup-form">
       <div>
         <label>Email:</label>
         <input type="email" value={email} onChange={handleEmail} required />

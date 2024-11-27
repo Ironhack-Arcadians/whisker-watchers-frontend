@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../api/axios";
 import { AuthContext } from "../../context/auth.context";
 
-const LoginForm = () => {
+const LoginForm = ({ onClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -54,6 +54,9 @@ const LoginForm = () => {
               }));
               break;
           }
+
+          // Closes popup after successful login
+          onClose();
         })
         .catch(error => {
           console.error("Login failed", error.response?.data?.message || error.message);

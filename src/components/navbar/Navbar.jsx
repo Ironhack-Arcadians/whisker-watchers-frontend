@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/ww-logo.png"
 import "./Navbar.css";
 
-function Navbar({ handleLogout, toggleSignupModal }) {
+function Navbar({ handleLogout, toggleSignupModal, toggleLoginModel }) {
   const isLoggedIn = localStorage.getItem("authToken");
 
   return (
@@ -18,9 +18,9 @@ function Navbar({ handleLogout, toggleSignupModal }) {
             <button className="navbar-button" onClick={toggleSignupModal}>
               Sign Up
             </button>
-            <a href="/login" className="navbar-link">
-              <button className="navbar-button">Login</button>
-            </a>
+            <button className="navbar-button" onClick={toggleLoginModel}>
+              Login
+            </button>
           </div>
         )}
       </div>

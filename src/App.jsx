@@ -22,10 +22,16 @@ import IsPrivate from "./components/isPrivate";
 function App() {
   const { user, isLoading, logOutUser } = useContext(AuthContext);
   const [isSignupModalOpen, setSignupModalOpen] = useState(false);
+  const [isLoginModelOpen, setLoginModelOpen] = useState(false);
   const location = useLocation();
 
   const toggleSignupModal = () => {
     setSignupModalOpen(!isSignupModalOpen);
+  };
+
+  const toggleLoginModel = () => {
+    console.log("Toggling login modal", isLoginModelOpen);
+    setLoginModelOpen(!isLoginModelOpen);
   };
 
   const shouldShowSidebar =
@@ -39,14 +45,17 @@ function App() {
 
   return (
     <>
-      <Navbar user={user} toggleSignupModal={toggleSignupModal} />
+      <Navbar
+        user={user}
+        toggleSignupModal={toggleSignupModal}
+        toggleLoginModel={toggleLoginModel}
+      />
       <div className="app-layout">
         {shouldShowSidebar && <Sidebar handleLogout={logOutUser} />}
         <div className="main-content">
           <div className="content">
             <Routes>
               <Route exact path="/" element={<HomePage />} />
-              <Route exact path="/login" element={<LoginForm />} />
               <Route exact path="/signup" element={<SignupForm />} />
               <Route exact path="/about" element={<About />} />
               <Route
@@ -103,6 +112,17 @@ function App() {
               &times;
             </button>
             <SignupForm onClose={toggleSignupModal} />
+          </div>
+        </div>
+      )}
+
+      {isLoginModelOpen && (
+        <div className="signup-modal-overlay">
+          <div className="signup-modal">
+            <button className="close-button" onClick={toggleLoginModel}>
+              &times;
+            </button>
+            <LoginForm onClose={toggleLoginModel} />
           </div>
         </div>
       )}
