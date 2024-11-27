@@ -1,9 +1,11 @@
 .my-care-requests-page {
   padding: 20px;
+  padding-left: 205px;
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
   width: 100%;
   display: flex;
+  min-height: 100vh;
 }
 
 .my-care-requests-page h2 {
