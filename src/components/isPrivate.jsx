@@ -11,11 +11,7 @@ function IsPrivate( { children, requiredRole } ) {
 
   if (!isLoggedIn) {
   // If the user is not logged in 
-    return <Navigate to="/login" />;
-  }
-
-  if(!user) {
-    return <Navigate to="/"/>
+    return <Navigate to="/" />;
   }
   
   if ((requiredRole && user.role !== requiredRole)) {

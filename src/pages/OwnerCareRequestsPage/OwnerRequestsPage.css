@@ -63,3 +63,19 @@
   font-size: 0.9rem;
   color: #777;
 }
+
+
+.care-back-button{
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1rem;
+  left: 20rem;
+  position: relative;
+  
+  
+  
+}

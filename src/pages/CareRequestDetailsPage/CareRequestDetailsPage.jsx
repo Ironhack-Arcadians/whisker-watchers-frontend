@@ -28,7 +28,7 @@ function CareRequestDetailsPage() {
         });
 
         const currentUserId = JSON.parse(atob(storedToken.split(".")[1]))._id;
-        if (response.data.data.creator !== currentUserId) {
+        if (response.data.data.creator !== currentUserId && response.data.data.selectedSitter !== currentUserId) {
           setError("You are not authorized to view this request.");
           return;
         }
