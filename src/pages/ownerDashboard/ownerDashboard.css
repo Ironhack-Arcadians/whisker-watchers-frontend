@@ -4,6 +4,7 @@
   flex-direction: column;
   flex-grow: 1;
   padding: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .add-care-request-section,
