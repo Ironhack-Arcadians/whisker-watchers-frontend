@@ -1,10 +1,10 @@
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 200px;
-  height: 100vh; /* Full viewport height */
-  background-color: #f4f4f4;
+  height: 110%; /* Full viewport height */
+  background-color: #374151;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: flex;
