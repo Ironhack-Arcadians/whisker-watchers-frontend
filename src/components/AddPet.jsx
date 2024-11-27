@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import axiosInstance from "../api/axios";
 
-const API_URL = "http://localhost:5005";
-
 function AddPet() {
     const [name, setName] = useState("");
     const [typeOfAnimal, setTypeOfAnimal] = useState("");

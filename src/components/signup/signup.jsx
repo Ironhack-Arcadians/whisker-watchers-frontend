@@ -3,8 +3,6 @@ import axiosInstance from "../../api/axios";
 import { useNavigate } from "react-router-dom";
 import "./signup.css";
 
-const API_URL = "http://localhost:5005";
-
 const SignupForm = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,7 +39,7 @@ const SignupForm = ({ onClose }) => {
     };
 
     axiosInstance
-      .post(`${API_URL}/auth/signup`, requestBody)
+      .post('/auth/signup', requestBody)
       .then((response) => {
         // Handle successful signup
         onClose();
