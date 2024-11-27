@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Sidebar.css';
 import AddPet from "../AddPet"
 import { AuthContext } from "../../context/auth.context";
@@ -7,6 +7,7 @@ import { AuthContext } from "../../context/auth.context";
 function Sidebar({ handleLogout }) {
     const { user } = useContext(AuthContext);
     const [showPetModal, setShowPetModal] = useState(false); // State for pet modal visibility
+    const navigate = useNavigate();
 
     //AddPet modal
 
