@@ -1,7 +1,6 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import './Sidebar.css';
-import AddPet from "../AddPet"
 import { AuthContext } from "../../context/auth.context";
 
 function Sidebar({ handleLogout }) {
@@ -29,16 +28,15 @@ function Sidebar({ handleLogout }) {
         <div className="sidebar">
 
             <div className="top-buttons">
-                <button>My Pets</button>
                 {/* Conditionally render buttons based on user role */}
                 {user?.role === "owner" && (
                     <>
-                        <Link to="/my-care-requests">
-                            <button>My Care Requests</button>
+                        <Link to="/pets">
+                            <button>Your Pets</button>
                         </Link>
-                        <div className="add-pet-button">
-                            <button onClick={handleOpenPetModal}>+ Add a Pet</button>
-                        </div>
+                        <Link to="/my-care-requests">
+                            <button>Your Care Requests</button>
+                        </Link>
                     </>
                 )}
                 <Link to={`/profile/${user}`}>
