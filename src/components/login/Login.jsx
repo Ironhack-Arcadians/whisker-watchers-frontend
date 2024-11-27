@@ -65,7 +65,7 @@ const LoginForm = ({ onClose }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="login-form">
+    <form onSubmit={handleSubmit} className="signup-form">
       <div>
         <label>Email</label>
         <input
