@@ -8,9 +8,9 @@ import doggos from "../../assets/images/doggos.jpg";
 /* Font awesome icon imports */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faPaw } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faHandshake } from '@fortawesome/free-regular-svg-icons';
+import { faPaw } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faHandshake } from "@fortawesome/free-regular-svg-icons";
 
 /* Bootstrap css */
 import "../../css/bootstrap-css/bootstrap-reboot.css";
@@ -66,9 +66,8 @@ function HomePage() {
               <div className="timeline-content">
                 <h2>Step 1: Register and Create Your Profile</h2>
                 <p className="text">
-                  <strong>For Pet Owners:</strong> Register your account and
-                  choose the "Pet Owner" profile type. Fill in your personal
-                  details.
+                  Register your account and choose the "Pet Owner" profile type.
+                  Fill in your personal details.
                 </p>
               </div>
             </div>
@@ -79,9 +78,8 @@ function HomePage() {
               <div className="timeline-content right">
                 <h2>Step 2: Set Up Your Profile</h2>
                 <p className="text">
-                  <strong>For Pet Owners:</strong> After creating your account,
-                  add profiles for your pets, including their name, age, breed,
-                  and any special care needs.
+                  After creating your account, add profiles for your pets,
+                  including their name, age, breed, and any special care needs.
                 </p>
               </div>
             </div>
@@ -92,9 +90,9 @@ function HomePage() {
               <div className="timeline-content">
                 <h2>Step 3: Create and Respond to Care Requests</h2>
                 <p className="text">
-                  <strong>For Pet Owners:</strong> Create care requests for your
-                  pets and choose from sitters who respond to your requests.
-                  Pick the one that suits your pet’s needs best.
+                  Create care requests for your pets and choose from sitters who
+                  respond to your requests. Pick the one that suits your pet’s
+                  needs best.
                 </p>
               </div>
             </div>
@@ -139,7 +137,7 @@ function HomePage() {
                 ].map((service, index) => (
                   <div key={index} className="col-md-6 services-2 w-100 d-flex">
                     <div className="icon d-flex align-items-center justify-content-center">
-                    {service.icon}
+                      {service.icon}
                     </div>
                     <div className="text pl-3">
                       <h4>{service.title}</h4>

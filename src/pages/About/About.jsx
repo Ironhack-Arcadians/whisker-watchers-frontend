@@ -121,10 +121,10 @@ function About() {
                       Interested in joining the Whisker Watcher family? Send
                       your CV to the team at {" "}
                       <a
-                        href="mailto:ww@gmail.com"
+                        href="mailto:totallyNotAFakeAccount@gmail.com"
                         style={{ textDecoration: "none", color: "#2563eb" }}
                       >
-                        ww@gmail.com
+                        totallyNotAFakeAccount@gmail.com
                       </a>
                       .
                     </p>
