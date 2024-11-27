@@ -18,9 +18,15 @@ function Sidebar({ handleLogout }) {
         setShowPetModal(false);
     };
 
+
+    const handleLogoutAndRedirect = () => {
+        handleLogout();  // Call your logout function
+        navigate("/");    // Redirect to the homepage
+    };
+
     return (
         <div className="sidebar">
-            
+
             <div className="top-buttons">
                 <button>My Pets</button>
                 {/* Conditionally render buttons based on user role */}
@@ -34,10 +40,12 @@ function Sidebar({ handleLogout }) {
                         </div>
                     </>
                 )}
-                <button>My Profile</button>
+                <Link to={`/profile/${user}`}>
+                    <button>Profile</button>
+                </Link>
             </div>
             <div className="bottom-button">
-                <button onClick={handleLogout}>Logout</button>
+                <button onClick={handleLogoutAndRedirect}>Logout</button>
             </div>
 
             {/* Modal to display the AddPet form */}
