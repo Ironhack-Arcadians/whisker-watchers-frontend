@@ -15,6 +15,7 @@ import HomePage from "./pages/homepage/HomePage";
 import Sidebar from "./components/sidebar/Sidebar";
 import OwnerRequestsPage from "./pages/OwnerCareRequestsPage/OwnerRequestsPage";
 import CareRequestDetailsPage from "./pages/CareRequestDetailsPage/CareRequestDetailsPage";
+import SitterRequestByIdPage from "./pages/SitterRequestByIdPage/SitterRequestByIdPage";
 
 import IsAnon from "./components/isAnon";
 import IsPrivate from "./components/isPrivate";
@@ -81,15 +82,8 @@ function App() {
                   </IsPrivate>
                 }
               />
-              <Route
-                path="/my-care-requests"
-                element={
-                  <IsPrivate requiredRole={"owner"}>
-                    {" "}
-                    <OwnerRequestsPage />{" "}
-                  </IsPrivate>
-                }
-              />
+              <Route path="/care-requests/sitter/:id" element= { <IsPrivate requiredRole={"sitter"}> <SitterRequestByIdPage /> </IsPrivate> } />
+              <Route path="/my-care-requests" element={ <IsPrivate requiredRole={"owner"}> {" "} <OwnerRequestsPage />{" "} </IsPrivate> } />
               <Route
                 path="/care-requests/:id"
                 element={
