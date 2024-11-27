@@ -9,11 +9,6 @@ function IsPrivate( { children, requiredRole } ) {
   // If the authentication is still loading 
   if (isLoading) return <p>Loading ...</p>;
 
-  if (!isLoggedIn) {
-  // If the user is not logged in 
-    return <Navigate to="/" />;
-  }
-  
   if ((requiredRole && user.role !== requiredRole)) {
     return <Navigate to={`/dashboard/${user?.role || 'default'}`} />;
   }
