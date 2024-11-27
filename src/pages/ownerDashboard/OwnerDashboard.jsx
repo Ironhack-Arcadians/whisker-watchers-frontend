@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../api/axios";
 import AddCareRequest from "../../components/AddCareRequest";
-import "./OwnerDashboard.css"
+import "./ownerDashboard.css"
 
 
 function OwnerDashboard() {
