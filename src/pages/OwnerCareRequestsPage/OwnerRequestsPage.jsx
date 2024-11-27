@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../api/axios";
 import "./OwnerRequestsPage.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const OwnerRequestsPage = () => {
 
+  const navigate = useNavigate();
   const [careRequests, setCareRequests] = useState([]);
   const [error, setError] = useState("");
 
@@ -35,6 +36,11 @@ const OwnerRequestsPage = () => {
   }, []);
 
   return (
+    <div className="my-care-requests-dashboard">
+                <button className="care-back-button" onClick={() => navigate(-1)}>
+                          &larr; Back to Dashboard
+                      </button>
+
     <div className="my-care-requests-page">
       {error && <p style={{ color: "red" }}>{error}</p>}
       <div className="care-requests-container">
@@ -52,7 +58,7 @@ const OwnerRequestsPage = () => {
                   borderRadius: "8px",
                   marginBottom: "10px",
                 }}
-              />
+                />
               <p>
                 Pet: <strong>{request.pet.name}</strong> ({request.pet.typeOfAnimal})
               </p>
@@ -72,6 +78,7 @@ const OwnerRequestsPage = () => {
           <p>No care requests found.</p>
         )}
       </div>
+    </div>
     </div>
   );
 };
