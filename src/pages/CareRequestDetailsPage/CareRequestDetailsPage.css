@@ -1,8 +1,8 @@
 .care-request-details-page {
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding-left: 15%;
     margin-bottom: 7rem;
+    min-height: 100vh;
   }
   
   .care-request-card {
@@ -10,6 +10,8 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: auto;
+    height: fit-content;
   }
   
   .care-request-card img {
