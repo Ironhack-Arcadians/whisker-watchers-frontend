@@ -16,7 +16,6 @@
 }
 
 
-
 /* OWNER DASHBOARD */
 
 .dashboard {
@@ -26,7 +25,6 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* Horizontally centers child elements */
-  justify-content: center; /* Vertically centers content if it's a flex container */
   min-height: 100vh; /* Ensures the container takes the full height of the viewport */
 }
 
