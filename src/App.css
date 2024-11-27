@@ -6,12 +6,18 @@
 .app-layout {
   display: flex;
   flex-direction: column; /*keeps navbar at top*/
-  height: 100vh;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
 }
 
+.main-content {
+  flex: 1;
+}
 
+.content {
+  padding: 20px;
+}
 
 /* OWNER DASHBOARD */
 
