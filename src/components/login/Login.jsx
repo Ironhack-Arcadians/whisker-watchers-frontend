@@ -39,20 +39,16 @@ const LoginForm = ({ onClose }) => {
 
           const role = response.data.role;
 
-          switch (role) {
-            case "owner":
-              navigate("/dashboard/owner");
-              break;
-            case "sitter":
-              navigate("/dashboard/sitter");
-              break;
-            default:
-              console.error("Invalid role detected");
-              setErrors(prevErrors => ({
-                ...prevErrors,
-                general: "Invalid credentials or an error occurred."
-              }));
-              break;
+          if (role === "owner") {
+            navigate("/dashboard/owner"); // Navigate to the owner's dashboard
+          } else if (role === "sitter") {
+            navigate("/dashboard/sitter"); // Navigate to the sitter's dashboard
+          } else {
+            console.error("Invalid role detected");
+            setErrors(prevErrors => ({
+              ...prevErrors,
+              general: "Invalid credentials or an error occurred."
+            }));
           }
 
           // Closes popup after successful login
