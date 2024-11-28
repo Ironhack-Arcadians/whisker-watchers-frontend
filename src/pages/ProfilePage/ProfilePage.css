@@ -7,20 +7,6 @@
     min-height: 100vh;
 }
 
-.back-button {
-    margin-bottom: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.back-button:hover {
-    background-color: #0056b3;
-}
-
 .profile-card {
     background: white;
     border-radius: 10px;
