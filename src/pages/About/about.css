@@ -61,26 +61,27 @@ body {
 /* Founder profile */
 .founders-cards {
   display: flex;
-  justify-content: space-between; /* Distributes profiles evenly */
-  margin-top: 20px; /* Adds space between the heading and profiles */
+  justify-content: space-between; 
+  margin-top: 20px; 
 }
 
 .founders-cards .profile {
-  text-align: center; /* Centers text under each profile image */
-  margin: 0 15px; /* Adds horizontal spacing between profiles */
+  text-align: center; 
+  margin: 0 15px; 
 }
 
 .founders-cards img {
-  width: 15rem;
-  height: auto;
-  margin-bottom: 10px; /* Adds space between the image and the text */
-  border-radius: 50%; /* Optional: Make images circular for aesthetics */
+  width: 12rem;         
+  height: 12rem;        
+  margin-bottom: 10px; 
+  border-radius: 50%;   
+  object-fit: cover;    
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .Founders-description {
-  text-align: center; /* Centers the heading */
-  margin-bottom: 30px; /* Adds space below the heading */
+  text-align: center; 
+  margin-bottom: 30px; 
 }
 .socials {
   margin: 5px 5px;
@@ -195,11 +196,11 @@ body {
 }
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .testimony-wrap {
-    text-align: center;
-  }
-
-  .testimony-wrap .user-img {
-    margin: 0 auto 10px;
+  .founders-cards img {
+    width: 10rem;         
+    height: 10rem;
+    border-radius: 50%;   
+    object-fit: cover;    
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
 }
