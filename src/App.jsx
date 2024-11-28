@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate  } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "./context/auth.context";
 
@@ -27,6 +27,7 @@ function App() {
   const [isSignupModalOpen, setSignupModalOpen] = useState(false);
   const [isLoginModelOpen, setLoginModelOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleSignupModal = () => {
     setSignupModalOpen(!isSignupModalOpen);
@@ -41,6 +42,29 @@ function App() {
     location.pathname !== "/login" &&
     location.pathname !== "/signup" &&
     location.pathname !== "/";
+
+    useEffect(() => {
+      const verifyUser = async () => {
+          try {
+              const response = await axiosInstance.get("/auth/verify", {
+                  headers: {
+                      Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+                  },
+              });
+              setUser(response.data); // Set user data
+              navigate(`/dashboard/${response.data.role}`); // Redirect to their dashboard
+          } catch (error) {
+              console.error("User verification failed:", error);
+              navigate("/"); // Redirect to home page on failure
+          } finally {
+              isLoading(false);
+          }
+      };
+
+      verifyUser();
+  }, [navigate]);
+
+  if (loading) return <div>Loading...</div>;
 
   if (isLoading) {
     return <div>Loading...</div>;
