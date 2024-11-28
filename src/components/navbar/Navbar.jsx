@@ -9,15 +9,15 @@ function Navbar({ handleLogout, toggleSignupModal, toggleLoginModel }) {
   const handleLogoutAndRedirect = () => {
     handleLogout();  // Call your logout function
     navigate("/");    // Redirect to the homepage
-};
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <a href="/">
+          <Link to="/">
             <img src={logo} alt="Logo" className="logo" />
-          </a>
+          </Link>
         </div>
         {!isLoggedIn ? (
           <div className="navbar-buttons">
@@ -33,7 +33,7 @@ function Navbar({ handleLogout, toggleSignupModal, toggleLoginModel }) {
             <Link to="/dashboard/owner">
               <button className="navbar-button">Back to Dashboard</button>
             </Link>
-            <button className="navbar-button"onClick={handleLogoutAndRedirect}>Logout</button>
+            <button className="navbar-button" onClick={handleLogoutAndRedirect}>Logout</button>
           </div>
         )}
       </div>
