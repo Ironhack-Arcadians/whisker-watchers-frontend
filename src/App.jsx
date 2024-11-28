@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import { Routes, Route, useLocation, useNavigate  } from "react-router-dom";
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "./context/auth.context";
+import axiosInstance from "./api/axios";
 
 import Footer from "./components/footer/Footer";
 import SignupForm from "./components/signup/signup";
