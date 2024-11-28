@@ -66,8 +66,7 @@ function HomePage() {
               <div className="timeline-content">
                 <h2>Step 1: Register and Create Your Profile</h2>
                 <p className="text">
-                  Register your account and choose the "Pet Owner" profile type.
-                  Fill in your personal details.
+                  Register your account and fill in your personal details.
                 </p>
               </div>
             </div>
@@ -90,9 +89,8 @@ function HomePage() {
               <div className="timeline-content">
                 <h2>Step 3: Create and Respond to Care Requests</h2>
                 <p className="text">
-                  Create care requests for your pets and choose from sitters who
-                  respond to your requests. Pick the one that suits your pet’s
-                  needs best.
+                  Create care requests for your pets and choose from our selection of professional pet sitters that best suits your pet's needs. 
+                  They will respond to you about their availability.
                 </p>
               </div>
             </div>
