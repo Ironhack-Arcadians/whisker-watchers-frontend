@@ -5,7 +5,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: white;
+    flex-direction: column;
   }
   
   .intro-title .heading-section {
@@ -49,4 +51,65 @@
 
   .how-ww-works {
     background-color: #ffff;
+  }
+
+  @media (max-width: 768px) {
+    .intro-title {
+      height: auto; /* Allow height to adapt to content */
+      padding: 2rem 1rem; /* Add some padding for spacing */
+      display: flex;
+      flex-direction: column; /* Stack elements */
+      justify-content: center; /* Center vertically */
+      align-items: center; /* Center horizontally */
+    }
+  
+    .intro-title .heading-section h1 {
+      font-size: 2.5rem; /* Adjust font size for smaller screens */
+      margin-bottom: 1rem;
+    }
+  
+    .intro-title .heading-section p {
+      font-size: 1.2rem; /* Adjust font size for better readability */
+    }
+    
+    .why-choose-us {
+      background-color: #f8f9fd;
+      padding: 2rem 1rem;
+    }
+    
+    .why-choose-us .row {
+      display: flex;
+      flex-direction: row; 
+      align-items: flex-start;
+      flex-wrap: wrap; 
+    }
+    
+    .why-choose-us .img-video {
+      margin-bottom: 8rem;
+      order: 1; 
+    }
+    
+    .why-choose-us .services-2 {
+      width: calc(50% - 1rem); 
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: row; 
+      align-items: center;
+      text-align: left;
+      order: 2; 
+    }
+    
+    .why-choose-us .services-2 .icon {
+      margin-right: 1rem; 
+    }
+    
+    .why-choose-us .services-2 .text h4 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .why-choose-us .services-2 .text p {
+      font-size: 1rem;
+    }
   }
