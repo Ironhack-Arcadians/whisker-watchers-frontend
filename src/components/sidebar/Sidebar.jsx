@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import './Sidebar.css';
 import { AuthContext } from "../../context/auth.context";
 
-function Sidebar({ handleLogout }) {
+function Sidebar() {
     const { user } = useContext(AuthContext);
     const [showPetModal, setShowPetModal] = useState(false); // State for pet modal visibility
     const navigate = useNavigate();
@@ -16,12 +16,6 @@ function Sidebar({ handleLogout }) {
 
     const handleClosePetModal = () => {
         setShowPetModal(false);
-    };
-
-
-    const handleLogoutAndRedirect = () => {
-        handleLogout();  // Call your logout function
-        navigate("/");    // Redirect to the homepage
     };
 
     return (
@@ -42,7 +36,6 @@ function Sidebar({ handleLogout }) {
                 <Link to={`/profile/${user}`}>
                     <button>Profile</button>
                 </Link>
-                <button onClick={handleLogoutAndRedirect}>Logout</button>
             </div>
             {/* Modal to display the AddPet form */}
             {showPetModal && (

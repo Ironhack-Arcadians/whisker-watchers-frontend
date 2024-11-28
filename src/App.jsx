@@ -54,9 +54,10 @@ function App() {
         user={user}
         toggleSignupModal={toggleSignupModal}
         toggleLoginModel={toggleLoginModel}
+        handleLogout={logOutUser}
       />
       <div className="app-layout">
-        {shouldShowSidebar && <Sidebar handleLogout={logOutUser} />}
+        {shouldShowSidebar && <Sidebar />}
         <div className="main-content">
           <div className="content">
             <Routes>

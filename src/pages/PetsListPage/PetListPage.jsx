@@ -36,7 +36,7 @@ function PetListPage() {
     return (
         <div>
             <button className="care-back-button" onClick={() => navigate(-1)}>
-                &larr; Back to Dashboard
+                &larr; Back
             </button>
             <div className="dashboard">
                 <h1>Your Pet Dashboard</h1>

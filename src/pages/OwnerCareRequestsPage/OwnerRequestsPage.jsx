@@ -38,7 +38,7 @@ const OwnerRequestsPage = () => {
   return (
     <div className="my-care-requests-dashboard">
       <button className="care-back-button" onClick={() => navigate(-1)}>
-        &larr; Back to Dashboard
+        &larr; Back
       </button>
       <div className="my-care-requests-page">
         <h1>Your Care Request Dashboard</h1>
