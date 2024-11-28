@@ -88,7 +88,7 @@ const SignupForm = ({ onClose }) => {
 
       {errorMessage && <div>{errorMessage}</div>}
 
-      <button type="submit">Sign Up</button>
+      <button type="submit" className="signup-btn">Sign Up</button>
     </form>
   );
 };

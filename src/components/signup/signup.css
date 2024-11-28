@@ -49,3 +49,16 @@
     gap: 1rem;             
     overflow: hidden;       
 }
+
+.signup-btn {
+    background-color: #314d86;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .signup-btn:hover {
+    background-color: #0056b3;
+  }

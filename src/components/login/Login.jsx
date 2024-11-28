@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../api/axios";
 import { AuthContext } from "../../context/auth.context";
+import "../signup/signup.css";
 
 const LoginForm = ({ onClose }) => {
   const [email, setEmail] = useState('');
@@ -92,7 +93,7 @@ const LoginForm = ({ onClose }) => {
 
       {errors.general && <div className="error-message">{errors.general}</div>}
 
-      <button type="submit">Log In</button>
+      <button type="submit" className="signup-btn">Log In</button>
     </form>
   );
 };
