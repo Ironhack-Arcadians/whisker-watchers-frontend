@@ -15,8 +15,8 @@ function About() {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <div className="heading-section mb-5 mt-5 mt-lg-0">
-                <h2 className="mb-3">Our philosophy</h2>
+              <div className="heading-section mb-5 mt-5 mt-lg-0 Founders-description">
+                <h2 className="mb-3"><strong>Our Philosophy</strong></h2>
                 <p>
                   At Whisker Watchers, we believe in creating a nurturing, safe,
                   and enriching environment for pets. We prioritize the
@@ -27,8 +27,8 @@ function About() {
                   just like family.
                 </p>
               </div>
-              <div className="heading-section mb-5 mt-5 mt-lg-0">
-                <h2 className="mb-3">Our Aim</h2>
+              <div className="heading-section mb-5 mt-5 mt-lg-0 Founders-description">
+                <h2 className="mb-3"><strong>Our Aim</strong></h2>
                 <p>
                   Our aim is to provide unparalleled pet care services, with a
                   focus on convenience, compassion, and quality. We strive to be
@@ -40,8 +40,8 @@ function About() {
             </div>
 
             <div className="col-lg-6 d-flex flex-column">
-              <div className="Founders-description mb-4">
-                <h2>Our Founders</h2>
+              <div className="Founders-description mb-4 heading-section">
+                <h2><strong>Our Founders</strong></h2>
               </div>
 
               <div className="founders-cards d-flex justify-content-between">
@@ -52,7 +52,6 @@ function About() {
                     alt="Vicente"
                     className="profile-image"
                   />
-                  <p>lorum ipsum lorum ipsum</p>
                   <a
                     className="socials"
                     href="https://www.linkedin.com/in/vicente-duch-moreno-a7b6a82a2/"
@@ -71,7 +70,6 @@ function About() {
                     alt="Justin"
                     className="profile-image"
                   />
-                  <p>lorum ipsum lorum ipsum</p>
                   <a
                     className="socials"
                     href="https://www.linkedin.com/in/justin-fanton-2034551a8/"
