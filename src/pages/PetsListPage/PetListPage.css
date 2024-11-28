@@ -104,3 +104,13 @@
     background-color: #0056b3;
   }
   
+  .pet-card button{
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px 10px 0 10px;
+  }

@@ -33,6 +33,22 @@ function PetListPage() {
         setPets((prevPets) => [...prevPets, newPet]);
     };
 
+    const handleDeletePet = async (petId) => {
+        try {
+            // Make API request to delete the pet
+            await axiosInstance.delete(`/api/pets/${petId}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+                },
+            });
+            // Remove deleted pet from the state
+            setPets((prevPets) => prevPets.filter((pet) => pet._id !== petId));
+        } catch (error) {
+            console.error("Error deleting pet:", error);
+            setError("Failed to delete the pet.");
+        }
+    };
+
     return (
         <div>
             <button className="care-back-button" onClick={() => navigate(-1)}>
@@ -54,10 +70,7 @@ function PetListPage() {
                         {error && <p style={{ color: "red" }}>{error}</p>}
                         {pets.length > 0 ? (
                             pets.map((pet) => (
-                                <div
-                                    key={pet._id}
-                                    className="pet-card"
-                                >
+                                <div key={pet._id} className="pet-card">
                                     {/* Pet picture and name */}
                                     {pet.pet_picture ? (
                                         <img
@@ -69,10 +82,17 @@ function PetListPage() {
                                         <div className="placeholder-avatar">No Image</div>
                                     )}
                                     <h3>{pet.name}</h3>
+                                    <p>{pet.description}</p>
+                                    <p><strong>Special Cares:</strong>{pet.specialCares}</p>
 
                                     {/* Action Buttons */}
                                     <div className="action-buttons">
-                                        <button className="details-btn">More Details</button>
+                                        <button
+                                            className="care-request-actions"
+                                            onClick={() => handleDeletePet(pet._id)} 
+                                        >
+                                            Delete
+                                        </button>
                                     </div>
                                 </div>
                             ))
