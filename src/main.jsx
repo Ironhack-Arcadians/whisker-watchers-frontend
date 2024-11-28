@@ -9,10 +9,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <StrictMode>
-    <Router>
-      <AuthProviderWrapper>
+    <AuthProviderWrapper>
+      <Router>
         <App />
-      </AuthProviderWrapper>
-    </Router>
+      </Router>
+    </AuthProviderWrapper>
   </StrictMode>
 );
