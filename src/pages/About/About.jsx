@@ -93,7 +93,7 @@ function About() {
             <div className="col-lg-6 d-flex justify-content-center">
               <div className="img-video about-img-2 text-center">
                 <img
-                  src="https://images.dog.ceo/breeds/buhund-norwegian/hakon2.jpg"
+                  src="https://scontent.fvlc2-1.fna.fbcdn.net/v/t39.30808-6/467678789_10234674337258834_5604163066618665332_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=NDik2QiUJoUQ7kNvgGFYxVB&_nc_zt=23&_nc_ht=scontent.fvlc2-1.fna&_nc_gid=ARm9bj99bHO8KaFUGIdIagA&oh=00_AYDavSSZNiKTZZX_2PTFPC3-cvBrgzxkIYc1qcOgcNB08Q&oe=674E4842"
                   alt="Norwegian Buhund"
                   className="img-fluid centered-img"
                 />
