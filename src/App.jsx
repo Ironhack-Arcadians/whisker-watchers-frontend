@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "./context/auth.context";
 
+
 import Footer from "./components/footer/Footer";
 import SignupForm from "./components/signup/signup";
 import LoginForm from "./components/login/Login";
@@ -27,6 +28,7 @@ function App() {
   const [isSignupModalOpen, setSignupModalOpen] = useState(false);
   const [isLoginModelOpen, setLoginModelOpen] = useState(false);
   const location = useLocation();
+ 
 
   const toggleSignupModal = () => {
     setSignupModalOpen(!isSignupModalOpen);
