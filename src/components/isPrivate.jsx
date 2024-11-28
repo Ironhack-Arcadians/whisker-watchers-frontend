@@ -10,10 +10,9 @@ function IsPrivate({ children, requiredRole }) {
 
   if (!user) {
     return <Navigate to="/" />;
-  }else if (user.role!==requiredRole){
-    return <Navigate to="/dashboard/owner"/>
-  } else if (user.role !== requiredRole) {
-    return <Navigate to={`/dashboard/${user.role}`} />;
+  } 
+  if ((requiredRole && user.role !== requiredRole)) {
+    return <Navigate to={`/dashboard/${user.role || '/owner'}` } />;
   }
   // If the user is logged in, allow to see the page
   else return children;
