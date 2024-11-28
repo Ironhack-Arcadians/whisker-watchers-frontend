@@ -5,6 +5,8 @@
   background-color: #f8f9fa;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
 }
 
@@ -16,32 +18,16 @@
 }
 
 .care-requests-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   margin: 20px;
 }
 
-.care-request-card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-}
 
 .care-request-card h3 {
   font-size: 1.25rem;
   color: #444;
   margin-bottom: 15px;
-}
-
-.care-request-card img {
-  border-radius: 8px;
-  object-fit: cover;
-  width: 100%;
-  height: 200px;
-  margin-bottom: 15px;
+  margin: 0 0 8px;
 }
 
 .care-request-card p {
@@ -74,7 +60,7 @@
   border-radius: 5px;
   cursor: pointer;
   margin: 1rem;
-  left: 20rem;
+  left: 13rem;
   position: relative;
   
   

@@ -37,48 +37,49 @@ const OwnerRequestsPage = () => {
 
   return (
     <div className="my-care-requests-dashboard">
-                <button className="care-back-button" onClick={() => navigate(-1)}>
-                          &larr; Back to Dashboard
-                      </button>
-
-    <div className="my-care-requests-page">
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <div className="care-requests-container">
-        {careRequests.length > 0 ? (
-          careRequests.map((request) => (
-            <div key={request._id} className="care-request-card">
-              <h3>{request.comment}</h3>
-              <img
-                src={request.pet.pet_picture || "default-image.jpg"}
-                alt={request.pet.name}
-                style={{
-                  width: "100%",
-                  height: "200px",
-                  objectFit: "cover",
-                  borderRadius: "8px",
-                  marginBottom: "10px",
-                }}
+      <button className="care-back-button" onClick={() => navigate(-1)}>
+        &larr; Back to Dashboard
+      </button>
+      <div className="my-care-requests-page">
+        <h1>Your Care Request Dashboard</h1>
+        <p>Manage your care requests and keep track of their details here.</p>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <div className="care-requests-container">
+          {careRequests.length > 0 ? (
+            careRequests.map((request) => (
+              <div key={request._id} className="care-request-card">
+                <h3>{request.comment}</h3>
+                <img
+                  src={request.pet.pet_picture || "default-image.jpg"}
+                  alt={request.pet.name}
+                  style={{
+                    width: "100%",
+                    height: "200px",
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                    marginBottom: "10px",
+                  }}
                 />
-              <p>
-                Pet: <strong>{request.pet.name}</strong> ({request.pet.typeOfAnimal})
-              </p>
-              <p>
-                Status: <strong>{request.status}</strong>
-              </p>
-              <p>
-                Date: <strong>{new Date(request.startDate).toLocaleDateString()}</strong> -{" "}
-                <strong>{new Date(request.endDate).toLocaleDateString()}</strong>
-              </p>
-              <Link to={`/care-requests/${request._id}`}>
-                <button>More Details</button>
-              </Link>
-            </div>
-          ))
-        ) : (
-          <p>No care requests found.</p>
-        )}
+                <p>
+                  Pet: <strong>{request.pet.name}</strong> ({request.pet.typeOfAnimal})
+                </p>
+                <p>
+                  Status: <strong>{request.status}</strong>
+                </p>
+                <p>
+                  Date: <strong>{new Date(request.startDate).toLocaleDateString()}</strong> -{" "}
+                  <strong>{new Date(request.endDate).toLocaleDateString()}</strong>
+                </p>
+                <Link to={`/care-requests/${request._id}`}>
+                  <button>More Details</button>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <p>No care requests found.</p>
+          )}
+        </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -1,47 +1,40 @@
 import { useState, useEffect } from "react";
 import axiosInstance from "../api/axios";
 
-function AddPet() {
+function AddPet({ onNewPetAdded }) {
     const [name, setName] = useState("");
     const [typeOfAnimal, setTypeOfAnimal] = useState("");
-    const [animalTypes, setAnimalTypes] = useState([]); // Holds the animal types (e.g., "Dog", "Cat")
+    const [animalTypes, setAnimalTypes] = useState([]);
     const [breed, setBreed] = useState("");
     const [age, setAge] = useState("");
     const [description, setDescription] = useState("");
     const [specialCares, setSpecialCares] = useState("");
     const [pet_picture, setPet_picture] = useState("");
-    const [loading, setLoading] = useState(true); // For handling loading state
 
     useEffect(() => {
         // Fetch available animal types dynamically
         axiosInstance
-            .get("/api/animal-types") 
+            .get("/api/animal-types")
             .then((response) => {
-                setAnimalTypes(response.data.data);
-                setLoading(false);
+                setAnimalTypes(response.data.data || []); // Ensure valid data
             })
-            .catch((error) => {
-                console.log("Error fetching animal types:", error);
-                setLoading(false);
-            });
+            .catch((error) => console.error("Error fetching animal types:", error));
     }, []);
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        const storedToken = localStorage.getItem("authToken"); // Fetch the token from localStorage
+        const storedToken = localStorage.getItem("authToken");
         if (!storedToken) {
-            console.log("No token found");
-            alert("You must be logged in to add a pet."); // -> for debugging
-            return; // Handle case where token is missing
+            alert("You must be logged in to add a pet.");
+            return;
         }
 
         const requestBody = { name, typeOfAnimal, breed, age, description, specialCares, pet_picture };
 
         axiosInstance
-            .post('/api/pets', requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
+            .post("/api/pets", requestBody, { headers: { Authorization: `Bearer ${storedToken}` } })
             .then((response) => {
-                // Clear form fields after successful submission
+                onNewPetAdded(response.data);
                 setName("");
                 setTypeOfAnimal("");
                 setBreed("");
@@ -50,28 +43,30 @@ function AddPet() {
                 setSpecialCares("");
                 setPet_picture("");
             })
-            .catch((error) => console.log(error));
+            .catch((error) => console.error(error));
     };
 
     return (
-        <div>
-            <h2>Add New Pet</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name:</label>
+        <div className="add-pet-container">
+            <h2 className="add-pet-title">Add New Pet</h2>
+            <form onSubmit={handleSubmit} className="add-pet-form">
+                <div className="form-group">
+                    <label htmlFor="name" className="form-label">Name:</label>
                     <input
                         type="text"
                         id="name"
+                        className="form-input"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
                     />
                 </div>
 
-                <div>
-                    <label htmlFor="typeOfAnimal">Type of Animal:</label>
+                <div className="form-group">
+                    <label htmlFor="typeOfAnimal" className="form-label">Type of Animal:</label>
                     <select
                         id="typeOfAnimal"
+                        className="form-select"
                         value={typeOfAnimal}
                         onChange={(e) => setTypeOfAnimal(e.target.value)}
                         required
@@ -85,53 +80,58 @@ function AddPet() {
                     </select>
                 </div>
 
-                <div>
-                    <label htmlFor="breed">Breed:</label>
+                <div className="form-group">
+                    <label htmlFor="breed" className="form-label">Breed:</label>
                     <input
                         type="text"
                         id="breed"
+                        className="form-input"
                         value={breed}
                         onChange={(e) => setBreed(e.target.value)}
                         required
                     />
                 </div>
 
-                <div>
-                    <label htmlFor="age">Age:</label>
+                <div className="form-group">
+                    <label htmlFor="age" className="form-label">Age:</label>
                     <input
                         type="number"
                         id="age"
+                        className="form-input"
                         value={age}
                         onChange={(e) => setAge(Number(e.target.value))}
                         required
                     />
                 </div>
 
-                <div>
-                    <label htmlFor="description">Description:</label>
+                <div className="form-group">
+                    <label htmlFor="description" className="form-label">Description:</label>
                     <textarea
                         id="description"
+                        className="form-textarea"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         required
                     ></textarea>
                 </div>
 
-                <div>
-                    <label htmlFor="specialCares">Special Cares:</label>
+                <div className="form-group">
+                    <label htmlFor="specialCares" className="form-label">Special Cares:</label>
                     <textarea
                         id="specialCares"
+                        className="form-textarea"
                         value={specialCares}
                         onChange={(e) => setSpecialCares(e.target.value)}
                         required
                     ></textarea>
                 </div>
 
-                <div>
-                    <label htmlFor="pet_picture">Pet Picture URL:</label>
+                <div className="form-group">
+                    <label htmlFor="pet_picture" className="form-label">Pet Picture URL:</label>
                     <input
                         type="text"
                         id="pet_picture"
+                        className="form-input"
                         value={pet_picture}
                         onChange={(e) => setPet_picture(e.target.value)}
                     />

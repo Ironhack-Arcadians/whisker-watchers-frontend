@@ -90,7 +90,8 @@ function CareRequestDetailsPage() {
 
   return (
     <div className="care-request-details-page">
-      <h1>Care Request Details</h1>
+      <h1>Your Care Request Dashboard</h1>
+      <p>Manage your care requests and keep track of their details here.</p>
       <div className="care-request-card">
         <h3>{careRequest.comment}</h3>
         <img
