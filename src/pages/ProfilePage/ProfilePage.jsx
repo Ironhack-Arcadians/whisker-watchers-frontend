@@ -36,7 +36,7 @@ function ProfilePage() {
     return (
         <div className="profile-page-container">
             <button className="back-button" onClick={() => navigate(-1)}>
-                &larr; Back to Dashboard
+                &larr; Back
             </button>
 
             <div className="profile-card">
