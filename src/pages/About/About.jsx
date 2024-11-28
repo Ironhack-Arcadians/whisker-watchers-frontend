@@ -1,5 +1,6 @@
 import VicenteImage from "./vicente.png";
 import JustinImage from "./justin.png";
+import { useEffect } from "react";
 
 /* Bootstrap CSS */
 import "../../css/bootstrap-css/bootstrap-reboot.css";
@@ -9,6 +10,10 @@ import "../../css/bootstrap-css/style.css";
 import "./about.css";
 
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="about-container">
       <section className="ftco-section ftco-about about-us">
