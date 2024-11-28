@@ -64,7 +64,7 @@ function App() {
       verifyUser();
   }, [navigate]);
 
-  if (loading) return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   if (isLoading) {
     return <div>Loading...</div>;
