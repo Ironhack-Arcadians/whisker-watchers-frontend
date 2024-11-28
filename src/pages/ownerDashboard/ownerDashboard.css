@@ -1,10 +1,15 @@
 .dashboard {
   max-width: 100%;
+  min-height: 100vh;
+  margin-left: 220px;
+  text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex-grow: 1;
   padding: 20px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4.5rem;
+  margin-top: 5rem;
 }
 
 .add-care-request-section,
