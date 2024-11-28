@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
-import { Routes, Route, useLocation, useNavigate  } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate, useEffect  } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "./context/auth.context";
 
