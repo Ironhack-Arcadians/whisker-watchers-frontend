@@ -39,13 +39,12 @@ function SitterDashboard() {
   };
 
   return (
-    <div className="dashboard-container">
-      <nav className="navbar">Sitter Dashboard </nav>
+    <div className="dashboard">
       <div className="content-wrapper">
-        <main className="main-content">
+        <main className="care-request-section">
           <h2>Care Requests Dashboard</h2>
           {error && <p style={{ color: "red" }}>{error}</p>}
-          <div className="care-requests-container">
+          <div className="care-requests-list">
             {careRequests.length > 0 ? (
               careRequests.map((request) => (
                 <div key={request._id} className="care-request-card">
