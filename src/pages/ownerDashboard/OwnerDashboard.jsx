@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../api/axios";
 import AddCareRequest from "../../components/AddCareRequest";
-import "./ownerDashboard.css"
-
+import "./ownerDashboard.css";
 
 function OwnerDashboard() {
     const [sitters, setSitters] = useState([]);
@@ -26,17 +25,17 @@ function OwnerDashboard() {
     }, []);
 
     const toggleSitterSelection = (sitterId) => {
-        // If the sitter is already selected, deselect them; otherwise, select them
         setSelectedSitter((prevSelectedSitter) =>
-          prevSelectedSitter === sitterId ? null : sitterId
+            prevSelectedSitter === sitterId ? null : sitterId
         );
-      };
+    };
+
     return (
         <div className="dashboard">
             <h1>Welcome fellow pet parent!</h1>
             <p>Here you can manage your pet care requests and select the best sitter for your pets.</p>
 
-            {/* Form to add a new Request*/}
+            {/* Form to add a new Request */}
             <div className="add-care-request-section">
                 <AddCareRequest selectedSitter={selectedSitter} />
             </div>
@@ -47,7 +46,10 @@ function OwnerDashboard() {
                 <div className="sitter-list">
                     {sitters.length > 0 ? (
                         sitters.map((sitter) => (
-                            <div key={sitter._id} className={`sitter-card ${selectedSitter === sitter._id ? "selected" : ""}`}>
+                            <div
+                                key={sitter._id}
+                                className={`sitter-card ${selectedSitter === sitter._id ? "selected" : ""}`}
+                            >
                                 {/* Profile picture and name */}
                                 <img
                                     src={sitter.profile_pic || "default-avatar.png"}
@@ -55,16 +57,29 @@ function OwnerDashboard() {
                                     className="sitter-avatar"
                                 />
                                 <h3>{sitter.name}</h3>
+                                
+                                {/* Rating */}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
 
                                 {/* Location */}
-                                <p>Location: {sitter.location || "Not specified"}</p>
+                                <p><strong>Location:</strong> {sitter.location || "Not specified"}</p>
 
-                                {/* More Details Button */}
-                                <button className="details-btn">More Details</button>
+                                {/* Bio */}
+                                <p><strong>Bio:</strong> {sitter.bio || "No bio available"}</p>
+
+                                {/* Experience */}
+                                <p><strong>Experience:</strong> {sitter.experience || "No experience specified"}</p>
+
 
                                 {/* Accept and Decline Buttons */}
                                 <div className="action-buttons">
-                                    <button className="accept-btn" onClick={() => toggleSitterSelection(sitter._id)}>  {selectedSitter === sitter._id ? "Deselect Sitter" : "Select Sitter"}</button>
+                                    <button className="accept-btn" onClick={() => toggleSitterSelection(sitter._id)}>
+                                        {selectedSitter === sitter._id ? "Deselect Sitter" : "Select Sitter"}
+                                    </button>
                                 </div>
                             </div>
                         ))
