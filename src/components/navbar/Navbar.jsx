@@ -18,6 +18,7 @@ function Navbar({ handleLogout, toggleSignupModal, toggleLoginModel }) {
           <Link to="/">
             <img src={logo} alt="Logo" className="logo" />
           </Link>
+          <h3 className="brand-name">Whisker Watchers</h3>
         </div>
         {!isLoggedIn ? (
           <div className="navbar-buttons">
