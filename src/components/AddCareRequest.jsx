@@ -61,8 +61,11 @@ function AddCareRequest({ selectedSitter }) {
 
   return (
     <div className="add-care-request">
+
       <h2>Add New Care Request</h2>
+      <p>Enter the start and end dates, choose your pet, and provide additional details to create a care request  <br></br> Don’t forget to select one of our sitters!</p>
       <form onSubmit={handleSubmit} className="care-request-form">
+      <div className="form-inputs">
         <div className="form-group">
           <label htmlFor="startDate">Start Date:</label>
           <input
@@ -72,7 +75,7 @@ function AddCareRequest({ selectedSitter }) {
             onChange={(e) => setStartDate(e.target.value)}
             min={new Date().toISOString().slice(0, 16)}
             required
-          />
+            />
         </div>
 
         <div className="form-group">
@@ -84,7 +87,7 @@ function AddCareRequest({ selectedSitter }) {
             onChange={(e) => setEndDate(e.target.value)}
             min={startDate}
             required
-          />
+            />
         </div>
 
         <div className="form-group">
@@ -94,7 +97,7 @@ function AddCareRequest({ selectedSitter }) {
             value={pet}
             onChange={(e) => setPet(e.target.value)}
             required
-          >
+            >
             <option value="">Select a pet</option>
             {pets.map((p) => (
               <option key={p._id} value={p._id}>
@@ -111,12 +114,15 @@ function AddCareRequest({ selectedSitter }) {
             id="comment"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
-          />
+            />
         </div>
 
         {error && <p style={{ color: "red" }}>{error}</p>}
+            </div>
+            <div className="form-buttons">
 
         <button type="submit" className="submit-btn">Add Care Request</button>
+            </div>
       </form>
     </div>
   );

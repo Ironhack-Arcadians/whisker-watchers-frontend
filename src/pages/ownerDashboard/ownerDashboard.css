@@ -159,3 +159,15 @@ select {
 .checked {
   color: orange;
 }
+
+
+.care-request-form{
+  display: flex;
+  flex-direction: column;
+}
+.form-inputs{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 2rem;
+}
