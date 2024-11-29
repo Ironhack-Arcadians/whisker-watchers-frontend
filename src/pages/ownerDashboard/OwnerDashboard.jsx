@@ -33,7 +33,7 @@ function OwnerDashboard() {
     return (
         <div className="dashboard">
             <h1>Welcome fellow pet parent!</h1>
-            <p>Here you can manage your pet care requests and select the best sitter for your pets.</p>
+            <p>Here you can create your pet care requests and select the best sitter for your pets.</p>
 
             {/* Form to add a new Request */}
             <div className="add-care-request-section">
@@ -43,6 +43,7 @@ function OwnerDashboard() {
             {/* Sitters List */}
             <div className="sitter-list-section">
                 <h2>Select a Sitter</h2>
+                <p>Choose the best sitter for your beloved pets from our trusted community.</p>
                 <div className="sitter-list">
                     {sitters.length > 0 ? (
                         sitters.map((sitter) => (
