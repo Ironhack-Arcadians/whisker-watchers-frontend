@@ -32,6 +32,9 @@ function HomePage() {
           height: "50rem",
         }}
       >
+        <div className="test-color-background">
+  
+        </div>
         <div className="container-intro">
           <div className="row">
             <div className="col-lg-12">
