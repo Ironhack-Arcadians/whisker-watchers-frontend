@@ -35,8 +35,13 @@ This frontend connects seamlessly with a RESTful API backend deployed on **Rende
 
 ## **Installation and Usage**
 1. Clone the repository.
+
+git clone https://github.com/Ironhack-Arcadians/whisker-watchers-frontend.git 
+
+cd whisker-watchers-frontend
+
 2. Install dependencies:
-   ```bash
+
    
 npm install
    
