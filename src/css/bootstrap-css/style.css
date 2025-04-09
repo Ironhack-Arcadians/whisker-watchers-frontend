@@ -364,11 +364,6 @@ small {
   font-weight: 400;
 }
 
-mark {
-  padding: 0.2em;
-  background-color: #fcf8e3;
-}
-
 .initialism {
   font-size: 90%;
   text-transform: uppercase;
