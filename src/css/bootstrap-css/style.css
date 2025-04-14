@@ -361,11 +361,6 @@ small {
   font-weight: 400;
 }
 
-.initialism {
-  font-size: 90%;
-  text-transform: uppercase;
-}
-
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
