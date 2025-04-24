@@ -391,18 +391,6 @@ pre code {
   margin-left: -15px;
 }
 
-.order-3 {
-  -webkit-box-ordinal-group: 4;
-  -ms-flex-order: 3;
-  order: 3;
-}
-
-.order-4 {
-  -webkit-box-ordinal-group: 5;
-  -ms-flex-order: 4;
-  order: 4;
-}
-
 .order-5 {
   -webkit-box-ordinal-group: 6;
   -ms-flex-order: 5;
