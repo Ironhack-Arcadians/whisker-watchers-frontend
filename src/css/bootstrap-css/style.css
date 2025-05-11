@@ -376,11 +376,6 @@ pre code {
   word-break: normal;
 }
 
-.pre-scrollable {
-  max-height: 340px;
-  overflow-y: scroll;
-}
-
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
