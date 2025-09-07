@@ -386,24 +386,6 @@ pre code {
   margin-left: -15px;
 }
 
-@media (min-width: 576px) {
-  .offset-sm-7 {
-    margin-left: 58.33333%;
-  }
-  .offset-sm-8 {
-    margin-left: 66.66667%;
-  }
-  .offset-sm-9 {
-    margin-left: 75%;
-  }
-  .offset-sm-10 {
-    margin-left: 83.33333%;
-  }
-  .offset-sm-11 {
-    margin-left: 91.66667%;
-  }
-}
-
 @media (min-width: 768px) {
   .col-md-7 {
     -webkit-box-flex: 0;
