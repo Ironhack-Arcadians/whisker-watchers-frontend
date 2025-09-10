@@ -387,18 +387,6 @@ pre code {
 }
 
 @media (min-width: 992px) {
-  .offset-lg-5 {
-    margin-left: 41.66667%;
-  }
-  .offset-lg-6 {
-    margin-left: 50%;
-  }
-  .offset-lg-7 {
-    margin-left: 58.33333%;
-  }
-  .offset-lg-8 {
-    margin-left: 66.66667%;
-  }
   .offset-lg-9 {
     margin-left: 75%;
   }
