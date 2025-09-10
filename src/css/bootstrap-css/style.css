@@ -386,18 +386,6 @@ pre code {
   margin-left: -15px;
 }
 
-@media (min-width: 992px) {
-  .offset-lg-9 {
-    margin-left: 75%;
-  }
-  .offset-lg-10 {
-    margin-left: 83.33333%;
-  }
-  .offset-lg-11 {
-    margin-left: 91.66667%;
-  }
-}
-
 @media (min-width: 1200px) {
   .col-xl {
     -ms-flex-preferred-size: 0;
