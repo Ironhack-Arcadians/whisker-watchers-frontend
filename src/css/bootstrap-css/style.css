@@ -387,16 +387,6 @@ pre code {
 }
 
 @media (min-width: 992px) {
-  .order-lg-11 {
-    -webkit-box-ordinal-group: 12;
-    -ms-flex-order: 11;
-    order: 11;
-  }
-  .order-lg-12 {
-    -webkit-box-ordinal-group: 13;
-    -ms-flex-order: 12;
-    order: 12;
-  }
   .offset-lg-0 {
     margin-left: 0;
   }
