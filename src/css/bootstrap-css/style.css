@@ -387,18 +387,6 @@ pre code {
 }
 
 @media (min-width: 1200px) {
-  .offset-xl-0 {
-    margin-left: 0;
-  }
-  .offset-xl-1 {
-    margin-left: 8.33333%;
-  }
-  .offset-xl-2 {
-    margin-left: 16.66667%;
-  }
-  .offset-xl-3 {
-    margin-left: 25%;
-  }
   .offset-xl-4 {
     margin-left: 33.33333%;
   }
