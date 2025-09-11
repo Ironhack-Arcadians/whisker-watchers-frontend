@@ -387,21 +387,6 @@ pre code {
 }
 
 @media (min-width: 1200px) {
-  .order-xl-10 {
-    -webkit-box-ordinal-group: 11;
-    -ms-flex-order: 10;
-    order: 10;
-  }
-  .order-xl-11 {
-    -webkit-box-ordinal-group: 12;
-    -ms-flex-order: 11;
-    order: 11;
-  }
-  .order-xl-12 {
-    -webkit-box-ordinal-group: 13;
-    -ms-flex-order: 12;
-    order: 12;
-  }
   .offset-xl-0 {
     margin-left: 0;
   }
