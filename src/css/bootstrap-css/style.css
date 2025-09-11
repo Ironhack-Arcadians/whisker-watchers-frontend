@@ -386,21 +386,6 @@ pre code {
   margin-left: -15px;
 }
 
-@media (min-width: 1200px) {
-  .offset-xl-8 {
-    margin-left: 66.66667%;
-  }
-  .offset-xl-9 {
-    margin-left: 75%;
-  }
-  .offset-xl-10 {
-    margin-left: 83.33333%;
-  }
-  .offset-xl-11 {
-    margin-left: 91.66667%;
-  }
-}
-
 .table {
   width: 100%;
   margin-bottom: 1rem;
