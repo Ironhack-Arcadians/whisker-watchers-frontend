@@ -386,17 +386,6 @@ pre code {
   margin-left: -15px;
 }
 
-.table-responsive {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-.table-responsive > .table-bordered {
-  border: 0;
-}
-
 .form-control {
   display: block;
   width: 100%;
