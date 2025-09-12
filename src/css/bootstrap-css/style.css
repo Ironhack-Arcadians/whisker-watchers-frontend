@@ -387,22 +387,6 @@ pre code {
 }
 
 
-.table-secondary,
-.table-secondary > th,
-.table-secondary > td {
-  background-color: #d6d8db;
-}
-
-.table-secondary th,
-.table-secondary td,
-.table-secondary thead th,
-.table-secondary tbody + tbody {
-  border-color: #b3b7bb;
-}
-
-.table-hover .table-secondary:hover {
-  background-color: #c8cbcf;
-}
 .table-hover .table-secondary:hover > td,
 .table-hover .table-secondary:hover > th {
   background-color: #c8cbcf;
