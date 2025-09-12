@@ -386,25 +386,6 @@ pre code {
   margin-left: -15px;
 }
 
-
-.table-hover .table-secondary:hover > td,
-.table-hover .table-secondary:hover > th {
-  background-color: #c8cbcf;
-}
-
-.table-success,
-.table-success > th,
-.table-success > td {
-  background-color: #c3e6cb;
-}
-
-.table-success th,
-.table-success td,
-.table-success thead th,
-.table-success tbody + tbody {
-  border-color: #8fd19e;
-}
-
 .table-hover .table-success:hover {
   background-color: #b1dfbb;
 }
