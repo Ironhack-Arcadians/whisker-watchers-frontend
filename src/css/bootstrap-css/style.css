@@ -386,25 +386,6 @@ pre code {
   margin-left: -15px;
 }
 
-.table-active,
-.table-active > th,
-.table-active > td {
-  background-color: rgba(0, 0, 0, 0.075);
-}
-
-.table-hover .table-active:hover {
-  background-color: rgba(0, 0, 0, 0.075);
-}
-.table-hover .table-active:hover > td,
-.table-hover .table-active:hover > th {
-  background-color: rgba(0, 0, 0, 0.075);
-}
-
-.table .thead-dark th {
-  color: #fff;
-  background-color: #212529;
-  border-color: #32383e;
-}
 
 .table .thead-light th {
   color: #495057;
