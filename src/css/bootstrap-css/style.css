@@ -387,31 +387,6 @@ pre code {
 }
 
 
-.table .thead-light th {
-  color: #495057;
-  background-color: #e9ecef;
-  border-color: #dee2e6;
-}
-
-.table-dark {
-  color: #fff;
-  background-color: #212529;
-}
-.table-dark th,
-.table-dark td,
-.table-dark thead th {
-  border-color: #32383e;
-}
-.table-dark.table-bordered {
-  border: 0;
-}
-.table-dark.table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-.table-dark.table-hover tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.075);
-}
-
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     display: block;
