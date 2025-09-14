@@ -386,11 +386,6 @@ pre code {
   margin-left: -15px;
 }
 
-select.form-control[size],
-select.form-control[multiple] {
-  height: auto;
-}
-
 textarea.form-control {
   height: auto;
 }
