@@ -386,17 +386,6 @@ pre code {
   margin-left: -15px;
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
-  .form-control {
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
-  }
-}
-.form-control::-ms-expand {
-  background-color: transparent;
-  border: 0;
-}
 .form-control:focus {
   color: #495057;
   background-color: #fff;
