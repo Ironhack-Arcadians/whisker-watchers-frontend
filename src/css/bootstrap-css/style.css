@@ -386,28 +386,10 @@ pre code {
   margin-left: -15px;
 }
 
-textarea.form-control {
-  height: auto;
-}
-
 .form-group {
   margin-bottom: 1rem;
 }
 
-.form-text {
-  display: block;
-  margin-top: 0.25rem;
-}
-
-.form-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -5px;
-  margin-left: -5px;
-}
 .form-row > .col,
 .form-row > [class*="col-"] {
   padding-right: 5px;
