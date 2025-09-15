@@ -390,24 +390,6 @@ pre code {
   margin-bottom: 1rem;
 }
 
-.form-check-input:disabled ~ .form-check-label {
-  color: #6c757d;
-}
-
-.form-check-label {
-  margin-bottom: 0;
-}
-
-.form-check-inline {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-left: 0;
-  margin-right: 0.75rem;
-}
 .form-check-inline .form-check-input {
   position: static;
   margin-top: 0;
