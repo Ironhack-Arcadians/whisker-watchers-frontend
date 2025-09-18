@@ -390,26 +390,6 @@ pre code {
   margin-bottom: 1rem;
 }
 
-.was-validated .custom-control-input:valid ~ .custom-control-label::before,
-.custom-control-input.is-valid ~ .custom-control-label::before {
-  border-color: #28a745;
-}
-
-.was-validated .custom-control-input:valid ~ .valid-feedback,
-.was-validated .custom-control-input:valid ~ .valid-tooltip,
-.custom-control-input.is-valid ~ .valid-feedback,
-.custom-control-input.is-valid ~ .valid-tooltip {
-  display: block;
-}
-
-.was-validated
-  .custom-control-input:valid:checked
-  ~ .custom-control-label::before,
-.custom-control-input.is-valid:checked ~ .custom-control-label::before {
-  border-color: #34ce57;
-  background-color: #34ce57;
-}
-
 .was-validated
   .custom-control-input:valid:focus
   ~ .custom-control-label::before,
