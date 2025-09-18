@@ -390,25 +390,6 @@ pre code {
   margin-bottom: 1rem;
 }
 
-.was-validated .custom-file-input:valid ~ .custom-file-label,
-.custom-file-input.is-valid ~ .custom-file-label {
-  border-color: #28a745;
-}
-
-.was-validated .custom-file-input:valid ~ .valid-feedback,
-.was-validated .custom-file-input:valid ~ .valid-tooltip,
-.custom-file-input.is-valid ~ .valid-feedback,
-.custom-file-input.is-valid ~ .valid-tooltip {
-  display: block;
-}
-
-.was-validated .custom-file-input:valid:focus ~ .custom-file-label,
-.custom-file-input.is-valid:focus ~ .custom-file-label {
-  border-color: #28a745;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-}
-
 .invalid-feedback {
   display: none;
   width: 100%;
