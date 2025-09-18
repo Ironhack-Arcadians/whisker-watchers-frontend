@@ -390,22 +390,6 @@ pre code {
   margin-bottom: 1rem;
 }
 
-.was-validated
-  .custom-control-input:valid:focus
-  ~ .custom-control-label::before,
-.custom-control-input.is-valid:focus ~ .custom-control-label::before {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-}
-
-.was-validated
-  .custom-control-input:valid:focus:not(:checked)
-  ~ .custom-control-label::before,
-.custom-control-input.is-valid:focus:not(:checked)
-  ~ .custom-control-label::before {
-  border-color: #28a745;
-}
-
 .was-validated .custom-file-input:valid ~ .custom-file-label,
 .custom-file-input.is-valid ~ .custom-file-label {
   border-color: #28a745;
