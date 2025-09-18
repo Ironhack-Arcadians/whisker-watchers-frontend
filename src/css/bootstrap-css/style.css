@@ -390,25 +390,6 @@ pre code {
   margin-bottom: 1rem;
 }
 
-.was-validated .form-control:invalid:focus,
-.form-control.is-invalid:focus {
-  border-color: #dc3545;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-}
-.was-validated .form-control:invalid ~ .invalid-feedback,
-.was-validated .form-control:invalid ~ .invalid-tooltip,
-.form-control.is-invalid ~ .invalid-feedback,
-.form-control.is-invalid ~ .invalid-tooltip {
-  display: block;
-}
-
-.was-validated textarea.form-control:invalid,
-textarea.form-control.is-invalid {
-  padding-right: 2.25rem;
-  background-position: top calc(2.25rem / 4) right calc(2.25rem / 4);
-}
-
 .was-validated .custom-select:invalid,
 .custom-select.is-invalid {
   border-color: #dc3545;
