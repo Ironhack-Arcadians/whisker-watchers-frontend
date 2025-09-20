@@ -1043,25 +1043,6 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
-.dropdown-menu-left {
-  right: auto;
-  left: 0;
-}
-
-@media (min-width: 576px) {
-  .dropdown-menu-sm-left {
-    right: auto;
-    left: 0;
-  }
-}
-
-@media (min-width: 768px) {
-  .dropdown-menu-md-left {
-    right: auto;
-    left: 0;
-  }
-}
-
 @media (min-width: 992px) {
   .dropdown-menu-lg-left {
     right: auto;
