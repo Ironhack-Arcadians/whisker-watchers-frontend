@@ -1043,27 +1043,6 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
-@media (min-width: 992px) {
-  .dropdown-menu-lg-left {
-    right: auto;
-    left: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .dropdown-menu-xl-left {
-    right: auto;
-    left: 0;
-  }
-}
-
-.dropup .dropdown-menu {
-  top: auto;
-  bottom: 100%;
-  margin-top: 0;
-  margin-bottom: 0.125rem;
-}
-
 .dropup .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;
