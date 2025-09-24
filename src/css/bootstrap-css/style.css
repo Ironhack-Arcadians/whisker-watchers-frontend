@@ -1354,30 +1354,6 @@ input[type="button"].btn-block {
   border-bottom-left-radius: 0;
 }
 
-.custom-control-label::before,
-.custom-file-label,
-.custom-select {
-  -webkit-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    -webkit-box-shadow 0.15s ease-in-out;
-  -o-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-}
-@media screen and (prefers-reduced-motion: reduce) {
-  .custom-control-label::before,
-  .custom-file-label,
-  .custom-select {
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
-  }
-}
-
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
