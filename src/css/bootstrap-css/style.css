@@ -1799,37 +1799,6 @@ input[type="button"].btn-block {
   color: #6c757d;
 }
 
-
-.badge-pill {
-  padding-right: 0.6em;
-  padding-left: 0.6em;
-  border-radius: 10rem;
-}
-
-.badge-primary {
-  color: #fff;
-  background-color: #007bff;
-}
-a.badge-primary:hover,
-a.badge-primary:focus {
-  color: #fff;
-  background-color: #0062cc;
-}
-
-.badge-secondary {
-  color: #fff;
-  background-color: #6c757d;
-}
-a.badge-secondary:hover,
-a.badge-secondary:focus {
-  color: #fff;
-  background-color: #545b62;
-}
-
-.badge-success {
-  color: #fff;
-  background-color: #28a745;
-}
 a.badge-success:hover,
 a.badge-success:focus {
   color: #fff;
