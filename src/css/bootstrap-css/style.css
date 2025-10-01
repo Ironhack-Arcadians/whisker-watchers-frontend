@@ -1940,11 +1940,6 @@ input[type="button"].btn-block {
   }
 }
 
-.progress-bar-animated {
-  -webkit-animation: progress-bar-stripes 1s linear infinite;
-  animation: progress-bar-stripes 1s linear infinite;
-}
-
 .media {
   display: -webkit-box;
   display: -ms-flexbox;
