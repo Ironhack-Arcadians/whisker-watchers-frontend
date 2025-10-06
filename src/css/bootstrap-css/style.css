@@ -2047,44 +2047,6 @@ a.close.disabled {
   outline: 0;
 }
 
-.modal-dialog {
-  position: relative;
-  width: auto;
-  margin: 0.5rem;
-  pointer-events: none;
-}
-.modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  -o-transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  -webkit-transform: translate(0, -50px);
-  -ms-transform: translate(0, -50px);
-  transform: translate(0, -50px);
-}
-@media screen and (prefers-reduced-motion: reduce) {
-  .modal.fade .modal-dialog {
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
-  }
-}
-.modal.show .modal-dialog {
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-}
-
-.modal-dialog-centered {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: calc(100% - (0.5rem * 2));
-}
 .modal-dialog-centered::before {
   display: block;
   height: calc(100vh - (0.5rem * 2));
