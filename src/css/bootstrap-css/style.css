@@ -2053,21 +2053,6 @@ a.close.disabled {
   content: "";
 }
 
-.bs-tooltip-bottom,
-.bs-tooltip-auto[x-placement^="bottom"] {
-  padding: 0.4rem 0;
-}
-.bs-tooltip-bottom .arrow,
-.bs-tooltip-auto[x-placement^="bottom"] .arrow {
-  top: 0;
-}
-.bs-tooltip-bottom .arrow::before,
-.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-  bottom: 0;
-  border-width: 0 0.4rem 0.4rem;
-  border-bottom-color: #000;
-}
-
 .bs-tooltip-left,
 .bs-tooltip-auto[x-placement^="left"] {
   padding: 0 0.4rem;
