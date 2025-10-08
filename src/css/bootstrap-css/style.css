@@ -2053,15 +2053,6 @@ a.close.disabled {
   content: "";
 }
 
-.tooltip-inner {
-  max-width: 200px;
-  padding: 0.25rem 0.5rem;
-  color: #fff;
-  text-align: center;
-  background-color: #000;
-  border-radius: 0.25rem;
-}
-
 .popover {
   position: absolute;
   top: 0;
