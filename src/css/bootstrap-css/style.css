@@ -2054,32 +2054,7 @@ a.close.disabled {
 }
 
 
-.bs-popover-right .arrow::before,
-.bs-popover-auto[x-placement^="right"] .arrow::before,
-.bs-popover-right .arrow::after,
-.bs-popover-auto[x-placement^="right"] .arrow::after {
-  border-width: 0.5rem 0.5rem 0.5rem 0;
-}
-.bs-popover-right .arrow::before,
-.bs-popover-auto[x-placement^="right"] .arrow::before {
-  left: 0;
-  border-right-color: rgba(0, 0, 0, 0.25);
-}
 
-.bs-popover-right .arrow::after,
-.bs-popover-auto[x-placement^="right"] .arrow::after {
-  left: 1px;
-  border-right-color: #fff;
-}
-
-.bs-popover-bottom,
-.bs-popover-auto[x-placement^="bottom"] {
-  margin-top: 0.5rem;
-}
-.bs-popover-bottom .arrow,
-.bs-popover-auto[x-placement^="bottom"] .arrow {
-  top: calc((0.5rem + 1px) * -1);
-}
 .bs-popover-bottom .arrow::before,
 .bs-popover-auto[x-placement^="bottom"] .arrow::before,
 .bs-popover-bottom .arrow::after,
