@@ -2053,23 +2053,7 @@ a.close.disabled {
   content: "";
 }
 
-.bs-popover-top .arrow::after,
-.bs-popover-auto[x-placement^="top"] .arrow::after {
-  bottom: 1px;
-  border-top-color: #fff;
-}
 
-.bs-popover-right,
-.bs-popover-auto[x-placement^="right"] {
-  margin-left: 0.5rem;
-}
-.bs-popover-right .arrow,
-.bs-popover-auto[x-placement^="right"] .arrow {
-  left: calc((0.5rem + 1px) * -1);
-  width: 0.5rem;
-  height: 1rem;
-  margin: 0.3rem 0;
-}
 .bs-popover-right .arrow::before,
 .bs-popover-auto[x-placement^="right"] .arrow::before,
 .bs-popover-right .arrow::after,
