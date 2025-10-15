@@ -2035,24 +2035,6 @@ a.close.disabled {
   padding: 0.75rem;
 }
 
-.carousel-control-prev:hover,
-.carousel-control-prev:focus,
-.carousel-control-next:hover,
-.carousel-control-next:focus {
-  color: #fff;
-  text-decoration: none;
-  outline: 0;
-  opacity: 0.9;
-}
-
-.carousel-control-prev {
-  left: 0;
-}
-
-.carousel-control-next {
-  right: 0;
-}
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: inline-block;
