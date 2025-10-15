@@ -2035,24 +2035,6 @@ a.close.disabled {
   padding: 0.75rem;
 }
 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1050;
-  display: none;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  outline: 0;
-}
-
-.modal-dialog-centered::before {
-  display: block;
-  height: calc(100vh - (0.5rem * 2));
-  content: "";
-}
-
 .carousel {
   position: relative;
 }
