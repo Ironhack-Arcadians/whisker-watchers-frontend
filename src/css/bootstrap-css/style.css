@@ -1985,38 +1985,6 @@ button.close {
   appearance: none;
 }
 
-a.close.disabled {
-  pointer-events: none;
-}
-
-.align-baseline {
-  vertical-align: baseline !important;
-}
-
-.align-top {
-  vertical-align: top !important;
-}
-
-.align-middle {
-  vertical-align: middle !important;
-}
-
-.align-bottom {
-  vertical-align: bottom !important;
-}
-
-.align-text-bottom {
-  vertical-align: text-bottom !important;
-}
-
-.align-text-top {
-  vertical-align: text-top !important;
-}
-
-.bg-primary {
-  background-color: #007bff !important;
-}
-
 a.bg-primary:hover,
 a.bg-primary:focus,
 button.bg-primary:hover,
