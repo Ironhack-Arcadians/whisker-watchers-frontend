@@ -1985,18 +1985,6 @@ button.close {
   appearance: none;
 }
 
-.border-bottom-0 {
-  border-bottom: 0 !important;
-}
-
-.border-left-0 {
-  border-left: 0 !important;
-}
-
-.border-primary {
-  border-color: #007bff !important;
-}
-
 .border-secondary {
   border-color: #6c757d !important;
 }
