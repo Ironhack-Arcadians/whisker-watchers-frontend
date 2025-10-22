@@ -1985,21 +1985,6 @@ button.close {
   appearance: none;
 }
 
-.bg-info {
-  background-color: #17a2b8 !important;
-}
-
-a.bg-info:hover,
-a.bg-info:focus,
-button.bg-info:hover,
-button.bg-info:focus {
-  background-color: #117a8b !important;
-}
-
-.bg-warning {
-  background-color: #ffc107 !important;
-}
-
 a.bg-warning:hover,
 a.bg-warning:focus,
 button.bg-warning:hover,
