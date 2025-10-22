@@ -1985,22 +1985,6 @@ button.close {
   appearance: none;
 }
 
-.border-danger {
-  border-color: #dc3545 !important;
-}
-
-.border-light {
-  border-color: #f8f9fa !important;
-}
-
-.border-dark {
-  border-color: #343a40 !important;
-}
-
-.border-white {
-  border-color: #fff !important;
-}
-
 .rounded {
   border-radius: 0.25rem !important;
 }
