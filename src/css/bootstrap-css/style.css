@@ -1985,32 +1985,6 @@ button.close {
   appearance: none;
 }
 
-.clearfix::after {
-  display: block;
-  clear: both;
-  content: "";
-}
-
-.d-none {
-  display: none !important;
-}
-
-.d-inline {
-  display: inline !important;
-}
-
-.d-inline-block {
-  display: inline-block !important;
-}
-
-.d-block {
-  display: block !important;
-}
-
-.d-table {
-  display: table !important;
-}
-
 .d-table-row {
   display: table-row !important;
 }
