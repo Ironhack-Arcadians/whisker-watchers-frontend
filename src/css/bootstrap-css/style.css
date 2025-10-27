@@ -1985,23 +1985,6 @@ button.close {
   appearance: none;
 }
 
-.flex-wrap-reverse {
-  -ms-flex-wrap: wrap-reverse !important;
-  flex-wrap: wrap-reverse !important;
-}
-
-.flex-fill {
-  -webkit-box-flex: 1 !important;
-  -ms-flex: 1 1 auto !important;
-  flex: 1 1 auto !important;
-}
-
-.flex-grow-0 {
-  -webkit-box-flex: 0 !important;
-  -ms-flex-positive: 0 !important;
-  flex-grow: 0 !important;
-}
-
 .flex-grow-1 {
   -webkit-box-flex: 1 !important;
   -ms-flex-positive: 1 !important;
