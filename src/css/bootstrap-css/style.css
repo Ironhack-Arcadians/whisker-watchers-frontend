@@ -1985,27 +1985,6 @@ button.close {
   appearance: none;
 }
 
-.flex-row {
-  -webkit-box-orient: horizontal !important;
-  -webkit-box-direction: normal !important;
-  -ms-flex-direction: row !important;
-  flex-direction: row !important;
-}
-
-.flex-column {
-  -webkit-box-orient: vertical !important;
-  -webkit-box-direction: normal !important;
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
-}
-
-.flex-row-reverse {
-  -webkit-box-orient: horizontal !important;
-  -webkit-box-direction: reverse !important;
-  -ms-flex-direction: row-reverse !important;
-  flex-direction: row-reverse !important;
-}
-
 .flex-column-reverse {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: reverse !important;
